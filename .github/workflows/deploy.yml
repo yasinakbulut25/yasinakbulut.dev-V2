@@ -1,0 +1,31 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main  # veya ana branşınız her neyse onu yazın
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build  # React projenizin build komutunu çalıştırın
+
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}  # GitHub Secrets'ten doğru FTP server adını ayarlayın
+        username: ${{ secrets.FTP_USERNAME }}  # GitHub Secrets'ten doğru FTP kullanıcı adını ayarlayın
+        password: ${{ secrets.FTP_PASSWORD }}  # GitHub Secrets'ten doğru FTP şifresini ayarlayın
+        protocol: ftps  # FTP sunucunuzun desteklediği protokolü seçin
+        port: 21  # FTP & açık FTPS portu, gerekirse bu değeri hosting sağlayıcınızın belirttiği doğru port numarasına göre güncelleyin
+        local-dir: dist/  # React projenizin build çıktısının olduğu dizin (sonunda / ile bitmeli)
+        server-dir: ./  # Projenizi yükleyeceğiniz dizin, bunu kendi cPanel dizininize göre güncelleyin (sonunda / ile bitmeli)
