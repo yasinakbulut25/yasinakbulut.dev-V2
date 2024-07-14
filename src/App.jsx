@@ -11,8 +11,8 @@ function App() {
         <div className="lg:w-3/4 w-full">
           <BlogDetail />
         </div>
-        <div className="lg:w-1/4 w-full lg:border-l border-transparent border-slate-200 pl-8 ">
-          <div className="sticky top-24">
+        <div className="lg:w-1/4 w-full lg:border-l border-transparent border-slate-200 lg:pl-8 ">
+          <div className="sticky top-24 gap-8 flex lg:flex-col flex-col-reverse w-full">
             <Profile />
             <BlogTopics />
           </div>

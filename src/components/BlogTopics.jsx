@@ -2,7 +2,7 @@ import { Chip } from "@nextui-org/react";
 
 function BlogTopics() {
   return (
-    <div className="mt-8">
+    <div className="">
       <div className="space-y-1">
         <h2 className="font-bold text-xl mb-4">Blog Categories</h2>
       </div>

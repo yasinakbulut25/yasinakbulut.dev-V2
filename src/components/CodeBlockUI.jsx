@@ -6,7 +6,7 @@ function CodeBlockUI({ code, language, highlightedLines }) {
   return (
     <div className="relative">
       <CodeBlock theme={themes.okaidia} code={code} language={language} lines={highlightedLines}>
-        <CodeBlock.Code className="bg-gray-900 py-6 rounded-xl shadow-lg">
+        <CodeBlock.Code className="bg-gray-900 py-6 overflow-auto rounded-xl shadow-lg">
           {({ isLineHighlighted }) => (
             <div
               className={`table-row ${

@@ -5,9 +5,9 @@ import { Github, Instagram, AtSign, Linkedin } from "lucide-react";
 
 function Profile() {
   return (
-    <>
+    <div>
       <User
-        className="gap-4"
+        className="gap-4 justify-start"
         name="Yasin Akbulut"
         description="Jr. UI Developer @Jotform"
         avatarProps={{
@@ -23,7 +23,7 @@ function Profile() {
           isExternal
           showAnchorIcon
           variant="bordered"
-          className="w-full justify-between"
+          className="w-full justify-between max-w-[300px]"
           startContent={<Github width={18} />}
         >
           GitHub
@@ -34,7 +34,7 @@ function Profile() {
           isExternal
           showAnchorIcon
           variant="bordered"
-          className="w-full justify-between"
+          className="w-full justify-between max-w-[300px]"
           startContent={<Linkedin width={18} />}
         >
           Linkedin
@@ -45,7 +45,7 @@ function Profile() {
           isExternal
           showAnchorIcon
           variant="bordered"
-          className="w-full justify-between"
+          className="w-full justify-between max-w-[300px]"
           startContent={<Instagram width={18} />}
         >
           Instagram
@@ -56,13 +56,13 @@ function Profile() {
           isExternal
           showAnchorIcon
           variant="bordered"
-          className="w-full justify-between"
+          className="w-full justify-between max-w-[300px]"
           startContent={<AtSign width={18} />}
         >
           Email
         </Button>
       </div>
-    </>
+    </div>
   );
 }
 
