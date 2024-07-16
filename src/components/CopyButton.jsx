@@ -12,11 +12,11 @@ function CopyButton({ code }) {
   return (
     <Tooltip content="Copy Code">
       <Button
-        className="absolute top-2 right-2 text-white px-2 py-1 max-w-8 min-w-0 h-auto"
+        className="text-gray-700 px-2 py-1 min-w-0 h-auto"
         onClick={copyCode}
         variant="light"
       >
-        {isCopied.value ? <Check /> : <Copy />}
+        {isCopied.value ? <Check width={18} /> : <Copy width={18} />}
       </Button>
     </Tooltip>
   );

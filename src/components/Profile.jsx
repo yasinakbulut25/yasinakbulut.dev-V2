@@ -1,7 +1,17 @@
 import { User } from "@nextui-org/react";
 import ProfileImage from "../assets/profile.png";
 import { Link, Button, Divider } from "@nextui-org/react";
-import { Github, Instagram, AtSign, Linkedin } from "lucide-react";
+import {
+  Github,
+  Instagram,
+  AtSign,
+  Linkedin,
+  PencilLine,
+  FolderOpenDot,
+  CodeXml,
+  Award,
+} from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 function Profile() {
   return (
@@ -16,64 +26,61 @@ function Profile() {
           radius: "full",
         }}
       />
-      <div className="flex flex-col gap-2 mt-4">
+      <div className="navLinks flex flex-col gap-2 mt-4">
         <Button
-          href="https://github.com/yasinakbulut25"
-          as={Link}
+          exact
+          to="/"
+          as={NavLink}
           isExternal
-          showAnchorIcon
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <Github width={16} /> Home
+            <PencilLine width={16} /> Blogs
           </span>
         </Button>
         <Button
-          href="https://www.linkedin.com/in/yasinakbulut/"
-          as={Link}
+          to="/projects"
+          as={NavLink}
           isExternal
-          showAnchorIcon
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <Linkedin width={16} /> Linkedin
+            <FolderOpenDot width={16} /> Projects
           </span>
         </Button>
         <Button
-          href="https://www.instagram.com/yasinakbulut_23/"
-          as={Link}
+          to="/works"
+          as={NavLink}
           isExternal
-          showAnchorIcon
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <Instagram width={16} /> Instagram
+            <CodeXml width={16} /> Works
           </span>
         </Button>
         <Button
-          href="mailto:akbulutyasin07@gmail.com"
-          as={Link}
+          to="/experiences"
+          as={NavLink}
           isExternal
-          showAnchorIcon
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <AtSign width={16} /> Email
+            <Award width={16} /> Experiences
           </span>
         </Button>
       </div>
       <Divider className="my-4" />
       <div className="flex flex-col gap-3 text-sm">
         <h4 className="px-2 text-xs font-medium leading-relaxed text-gray-600">
-          Online
+          Social
         </h4>
         <div className="flex flex-col gap-2">
           <Button
