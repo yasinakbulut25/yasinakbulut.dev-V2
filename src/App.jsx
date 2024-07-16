@@ -1,18 +1,18 @@
 import BlogDetail from "./components/BlogDetail";
 import LeftMenu from "./components/LeftMenu";
+import MobileMenu from "./components/MobileMenu";
 import SubMenu from "./components/SubMenu";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <main className="flex">
+    <main className="lg:flex block flex-1">
+      <MobileMenu />
       <LeftMenu />
-      <div className="flex flex-1">
-        <SubMenu />
-        <Routes>
-          <Route path="/" element={<BlogDetail />} />
-        </Routes>
-      </div>
+      <SubMenu />
+      <Routes>
+        <Route path="/" element={<BlogDetail />} />
+      </Routes>
     </main>
   );
 }
