@@ -1,17 +1,24 @@
+import { useLocation } from "react-router-dom";
 import BlogDetail from "./components/BlogDetail";
+import Home from "./components/Home";
 import LeftMenu from "./components/LeftMenu";
 import MobileMenu from "./components/MobileMenu";
 import SubMenu from "./components/SubMenu";
 import { Routes, Route } from "react-router-dom";
+import { findFirstParam } from "./utils/index";
 
 function App() {
+  const location = useLocation();
+  const firstSegment = findFirstParam(location.pathname);
+
   return (
     <main className="lg:flex block flex-1">
       <MobileMenu />
       <LeftMenu />
-      <SubMenu />
+      {firstSegment && <SubMenu firstSegment={firstSegment} />}
       <Routes>
-        <Route path="/" element={<BlogDetail />} />
+        <Route path="/blogs" element={<Home />} />
+        <Route path="/blog/:url" element={<BlogDetail />} />
       </Routes>
     </main>
   );

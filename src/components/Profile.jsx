@@ -10,6 +10,7 @@ import {
   FolderOpenDot,
   CodeXml,
   Award,
+  Home
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -30,6 +31,18 @@ function Profile() {
         <Button
           exact
           to="/"
+          as={NavLink}
+          isExternal
+          variant="light"
+          radius="sm"
+          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
+        >
+          <span className="flex items-center gap-2 ">
+            <Home width={16} /> Home
+          </span>
+        </Button>
+        <Button
+          to="/blogs"
           as={NavLink}
           isExternal
           variant="light"
