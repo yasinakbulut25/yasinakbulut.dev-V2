@@ -20,7 +20,7 @@ function MobileMenu() {
     >
       <Button
         className="px-0 data-[hover=true]:bg-transparent font-semibold"
-        onPress={onOpen}
+        onClick={onOpen}
         variant="light"
       >
         <GanttChart /> {TEXTS.MENU}

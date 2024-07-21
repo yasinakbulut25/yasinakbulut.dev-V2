@@ -40,3 +40,17 @@ body {
 .content-html ol li {
   list-style-type: none;
 }
+
+.content-html ul li::before,
+.content-html ol li::before {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  margin-right: 8px;
+  top: -3px;
+  margin-left: -1em;
+}

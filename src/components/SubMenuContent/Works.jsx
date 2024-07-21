@@ -7,7 +7,7 @@ function Works() {
   const { works, filePathUrl, setSubMenuOpen, language } = useBlogContext();
 
   return (
-    <div className="navLinks flex lg:flex-col flex-wrap gap-4 text-sm">
+    <div className="navLinks flex lg:flex-col flex-wrap gap-4 text-sm justify-center">
       {works.length > 0 ? (
         works.map((project) => {
           const codings = codingStringToArray(project.coding);
