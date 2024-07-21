@@ -14,7 +14,7 @@ export const Provider = ({ children }) => {
   const secondSegment = findSecondParam(location.pathname);
   const [subMenuOpen, setSubMenuOpen] = useState((firstSegment && !secondSegment) ? true : false);
 
-  const [about, setAbout] = useState({});
+  const [about, setAbout] = useState();
   const [projects, setProjects] = useState([]);
   const [works, setWorks] = useState([]);
   const [experiences, setExperiences] = useState([]);

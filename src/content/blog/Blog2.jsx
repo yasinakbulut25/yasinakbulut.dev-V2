@@ -66,7 +66,7 @@ function Blog2() {
   ];
 
   return (
-    <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 py-8">
+    <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 pb-8 lg:pt-0 pt-8">
       <div className="flex gap-2 text-gray-500 font-light">
         <CalendarDays width={18} /> April 3, 2024
       </div>
