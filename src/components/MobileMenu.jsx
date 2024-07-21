@@ -43,7 +43,7 @@ function MobileMenu() {
         onOpenChange={onOpenChange}
         className="absolute sm:my-0 rounded-bl-none rounded-br-none"
       >
-        <ModalContent>
+        <ModalContent className="my-0">
           <div className="absolute-top-0 w-28 h-2 bg-gray-200 rounded-full mx-auto mt-2"></div>
           <div className="p-6">
             <Profile closeMenu={onClose} />
