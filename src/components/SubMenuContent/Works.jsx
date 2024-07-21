@@ -4,17 +4,18 @@ import { Chip, Image, Spinner } from "@nextui-org/react";
 import { codingStringToArray, codingValues } from "../../utils";
 
 function Works() {
-  const { works, filePathUrl } = useBlogContext();
+  const { works, filePathUrl, setSubMenuOpen } = useBlogContext();
 
   return (
-    <div className="navLinks flex flex-col gap-4 text-sm">
+    <div className="navLinks flex lg:flex-col flex-wrap gap-4 text-sm">
       {works.length > 0 ? (
         works.map((project) => {
           const codings = codingStringToArray(project.coding);
           return (
             <NavLink
+              onClick={() => setSubMenuOpen(false)}
               key={project.id}
-              className="flex flex-col gap-2 transition-colors duration-300 border border-slate-200 hover:bg-gray-200 rounded-lg p-3"
+              className="flex flex-col gap-2 transition-colors duration-300 border border-slate-200 hover:bg-gray-200 rounded-lg p-3 max-w-[325px]"
               to={`/works/${project.id}`}
             >
               <span className="font-medium">{project.name}</span>

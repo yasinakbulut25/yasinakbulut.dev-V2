@@ -7,6 +7,8 @@ export const Provider = ({ children }) => {
   const backendUrl = "https://blogs.yasinakbulut.dev/backend/";
   const filePathUrl = "https://yasinakbulut.dev/";
 
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
+
   const [projects, setProjects] = useState([]);
   const [works, setWorks] = useState([]);
   const [experiences, setExperiences] = useState([]);
@@ -39,7 +41,9 @@ export const Provider = ({ children }) => {
     filePathUrl,
     projects,
     works,
-    experiences
+    experiences,
+    subMenuOpen,
+    setSubMenuOpen
   };
 
   return (

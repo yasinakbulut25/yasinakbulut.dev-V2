@@ -3,8 +3,11 @@ import { string } from "prop-types";
 import BlogList from "./SubMenuContent/BlogList";
 import Projects from "./SubMenuContent/Projects";
 import Works from "./SubMenuContent/Works";
+import { useBlogContext } from "../context/BlogContext";
 
 function SubMenu({ firstSegment }) {
+  const { subMenuOpen } = useBlogContext();
+
   const [renderMenu, setRenderMenu] = useState();
 
   useEffect(() => {
@@ -23,9 +26,13 @@ function SubMenu({ firstSegment }) {
     }
   }, [firstSegment]);
 
+  const addedClass = subMenuOpen ? "flex" : "lg:flex hidden";
+
   return (
-    <div className="scrollable-area relative flex-col hidden bg-zinc-50 lg:flex lg:flex-col lg:border-r min-w-[350px] max-w-[350px]">
-      <div className="sticky top-0 z-10 border-b bg-zinc-50 px-5 py-3">
+    <div
+      className={`scrollable-area lg:pt-0 pt-12 lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full ${addedClass}`}
+    >
+      <div style={{zIndex: 11}} className="sticky top-0 border-b bg-zinc-50 px-5 py-3">
         <span className="text-sm font-semibold tracking-tight capitalize">
           {firstSegment}
         </span>

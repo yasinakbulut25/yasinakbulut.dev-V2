@@ -13,8 +13,11 @@ import {
   Home
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useBlogContext } from "../context/BlogContext";
 
-function Profile() {
+function Profile({ closeMenu }) {
+  const { setSubMenuOpen} = useBlogContext();
+
   return (
     <div className="flex flex-col gap-2">
       <User
@@ -32,6 +35,7 @@ function Profile() {
           exact
           to="/"
           as={NavLink}
+          onClick={closeMenu}
           isExternal
           variant="light"
           radius="sm"
@@ -44,6 +48,7 @@ function Profile() {
         <Button
           to="/blogs"
           as={NavLink}
+          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
           isExternal
           variant="light"
           radius="sm"
@@ -56,6 +61,7 @@ function Profile() {
         <Button
           to="/projects"
           as={NavLink}
+          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
           isExternal
           variant="light"
           radius="sm"
@@ -68,6 +74,7 @@ function Profile() {
         <Button
           to="/works"
           as={NavLink}
+          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
           isExternal
           variant="light"
           radius="sm"
@@ -80,6 +87,7 @@ function Profile() {
         <Button
           to="/experiences"
           as={NavLink}
+          onClick={closeMenu}
           isExternal
           variant="light"
           radius="sm"

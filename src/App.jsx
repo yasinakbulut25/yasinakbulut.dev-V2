@@ -18,14 +18,18 @@ function App() {
     <main className="lg:flex block flex-1">
       <MobileMenu />
       <LeftMenu />
-      {(firstSegment && firstSegment !== 'experiences') && <SubMenu firstSegment={firstSegment} />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blogs/:url" element={<BlogDetail />} />
-        <Route path="/projects/:url" element={<ProjectDetail />} />
-        <Route path="/works/:url" element={<WorkDetail />} />
-        <Route path="/experiences" element={<Experiences />} />
-      </Routes>
+      {firstSegment && firstSegment !== "experiences" && (
+        <SubMenu firstSegment={firstSegment} />
+      )}
+      <div className="lg:pt-0 pt-10 w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blogs/:url" element={<BlogDetail />} />
+          <Route path="/projects/:url" element={<ProjectDetail />} />
+          <Route path="/works/:url" element={<WorkDetail />} />
+          <Route path="/experiences" element={<Experiences />} />
+        </Routes>
+      </div>
     </main>
   );
 }
