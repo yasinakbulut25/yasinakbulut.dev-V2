@@ -17,8 +17,8 @@ function App() {
       <LeftMenu />
       {firstSegment && <SubMenu firstSegment={firstSegment} />}
       <Routes>
-        <Route path="/blogs" element={<Home />} />
-        <Route path="/blog/:url" element={<BlogDetail />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs/:url" element={<BlogDetail />} />
       </Routes>
     </main>
   );

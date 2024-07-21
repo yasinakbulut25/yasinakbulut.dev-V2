@@ -11,5 +11,6 @@
 }
 
 .navLinks a.active {
-  background-color: rgb(229 231 235);;
+  background-color: #0a0a0a;
+  color: #fff;
 }

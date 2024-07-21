@@ -1,7 +1,7 @@
-import CodeBlockUI from "../../components/CodeBlockUI";
-import ImageUI from "../../components/ImageUI";
+import CodeBlockUI from "../../components/ui/CodeBlockUI";
+import ImageUI from "../../components/ui/ImageUI";
 import { Link } from "@nextui-org/react";
-import TableUI from "../../components/TableUI";
+import TableUI from "../../components/ui/TableUI";
 import { CalendarDays } from "lucide-react";
 
 function Blog2() {
@@ -83,7 +83,7 @@ function Blog2() {
           </p>
 
           <ImageUI
-            src="https://app.requestly.io/delay/5000/https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
+            src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
             alt="Digital Image"
           />
           <h2>Getting started with Flowbite</h2>
