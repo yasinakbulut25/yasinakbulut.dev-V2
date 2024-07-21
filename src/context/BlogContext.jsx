@@ -9,16 +9,24 @@ export const Provider = ({ children }) => {
 
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
+  const [about, setAbout] = useState({});
   const [projects, setProjects] = useState([]);
   const [works, setWorks] = useState([]);
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
+    getAbout();
     getProjects();
     getWorks();
     getExperiences();
   }, []);
 
+  const getAbout = async () => {
+    await axios.get(backendUrl + "getAbout").then(function (response) {
+      setAbout(response.data);
+    });
+  };
+  
   const getProjects = async () => {
     await axios.get(backendUrl + "getProjects").then(function (response) {
       setProjects(response.data);
@@ -42,8 +50,9 @@ export const Provider = ({ children }) => {
     projects,
     works,
     experiences,
+    about,
     subMenuOpen,
-    setSubMenuOpen
+    setSubMenuOpen,
   };
 
   return (

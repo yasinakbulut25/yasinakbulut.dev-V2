@@ -49,6 +49,14 @@ function getProcess(){
         $jsonData = json_encode($fetchData, JSON_UNESCAPED_UNICODE);
         echo $jsonData;
     }
+    
+    if ($requestValue && $requestValue === 'getAbout') {
+        $getData = $db->prepare("SELECT * FROM about where lang=?");
+        $getData->execute(array($lang));
+        $fetchData = $getData->fetch(PDO::FETCH_ASSOC);
+        $jsonData = json_encode($fetchData, JSON_UNESCAPED_UNICODE);
+        echo $jsonData;
+    }
 }
 
 function postProcess()

@@ -12,7 +12,6 @@
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
     "axios": "^1.7.2",
-    "framer-motion": "^11.3.2",
     "lucide-react": "^0.408.0",
     "prism-react-renderer": "^2.3.1",
     "prop-types": "^15.8.1",
@@ -20,6 +19,7 @@
     "react-code-block": "^1.0.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.0",
+    "react-type-animation": "^3.2.0",
     "react-use": "^17.5.0"
   },
   "devDependencies": {
