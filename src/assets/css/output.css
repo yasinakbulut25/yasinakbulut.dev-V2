@@ -5828,6 +5828,11 @@ video {
   background-color: hsl(var(--nextui-warning) / var(--nextui-warning-opacity, var(--tw-bg-opacity)));
 }
 
+.data-\[hover\=true\]\:bg-indigo-600[data-hover=true] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
 .data-\[has-end-content\=true\]\:pe-1\.5[data-has-end-content=true] {
   padding-inline-end: 0.375rem;
 }
@@ -6240,6 +6245,16 @@ video {
 .data-\[unavailable\=true\]\:text-default-300[data-unavailable=true] {
   --tw-text-opacity: 1;
   color: hsl(var(--nextui-default-300) / var(--nextui-default-300-opacity, var(--tw-text-opacity)));
+}
+
+.data-\[hover\=true\]\:text-indigo-600[data-hover=true] {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+
+.data-\[hover\=true\]\:text-white[data-hover=true] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .data-\[unavailable\=true\]\:line-through[data-unavailable=true] {
@@ -8057,6 +8072,16 @@ video {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -8111,6 +8136,11 @@ video {
 
   .lg\:border-transparent {
     border-color: transparent;
+  }
+
+  .lg\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .lg\:pt-0 {

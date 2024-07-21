@@ -10,13 +10,19 @@ import {
   FolderOpenDot,
   CodeXml,
   Award,
-  Home
+  Home,
+  Languages,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../context/BlogContext";
 
 function Profile({ closeMenu }) {
-  const { setSubMenuOpen} = useBlogContext();
+  const { setSubMenuOpen, language, setLang, TEXTS } = useBlogContext();
+
+  const handleLanguageClick = () => {
+    setLang(language === "tr" ? 1 : 0);
+    window.location.href = language === 'tr' ? '/en' : '/tr';
+  };
 
   return (
     <div className="flex flex-col gap-2">
@@ -33,59 +39,63 @@ function Profile({ closeMenu }) {
       <div className="navLinks flex flex-col gap-2 mt-4">
         <Button
           exact
-          to="/"
+          to={`/${language}`}
           as={NavLink}
           onClick={closeMenu}
           isExternal
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
+          end
         >
           <span className="flex items-center gap-2 ">
-            <Home width={16} /> Home
+            <Home width={16} /> {TEXTS.HOME}
           </span>
         </Button>
         <Button
-          to="/blogs"
+          to={`/${language}/blogs`}
           as={NavLink}
-          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
+          onClick={() => setSubMenuOpen(true)}
+          onPress={closeMenu}
           isExternal
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <PencilLine width={16} /> Blogs
+            <PencilLine width={16} /> {TEXTS.BLOGS}
           </span>
         </Button>
         <Button
-          to="/projects"
+          to={`/${language}/projects`}
           as={NavLink}
-          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
+          onClick={() => setSubMenuOpen(true)}
+          onPress={closeMenu}
           isExternal
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <FolderOpenDot width={16} /> Projects
+            <FolderOpenDot width={16} /> {TEXTS.PROJECTS}
           </span>
         </Button>
         <Button
-          to="/works"
+          to={`/${language}/works`}
           as={NavLink}
-          onClick={() => { setSubMenuOpen(true); closeMenu(); }}
+          onClick={() => setSubMenuOpen(true)}
+          onPress={closeMenu}
           isExternal
           variant="light"
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <CodeXml width={16} /> Works
+            <CodeXml width={16} /> {TEXTS.WORKS}
           </span>
         </Button>
         <Button
-          to="/experiences"
+          to={`/${language}/experiences`}
           as={NavLink}
           onClick={closeMenu}
           isExternal
@@ -94,14 +104,25 @@ function Profile({ closeMenu }) {
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 hover:opacity-100 text-sm px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
-            <Award width={16} /> Experiences
+            <Award width={16} /> {TEXTS.EXPERIENCES}
+          </span>
+        </Button>
+        <Button
+          onClick={handleLanguageClick}
+          isExternal
+          variant="light"
+          radius="sm"
+          className="w-full text-indigo-600 justify-between font-medium data-[hover=true]:bg-indigo-600 data-[hover=true]:text-white hover:opacity-100 text-sm px-2 h-8"
+        >
+          <span className="flex items-center gap-2 ">
+            <Languages width={16} /> {TEXTS.LANGUAGE}
           </span>
         </Button>
       </div>
       <Divider className="my-4" />
       <div className="flex flex-col gap-3 text-sm">
         <h4 className="px-2 text-xs font-medium leading-relaxed text-gray-600">
-          Social
+          {TEXTS.SOCIAL}
         </h4>
         <div className="flex flex-col gap-2">
           <Button

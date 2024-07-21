@@ -5,14 +5,17 @@ import LeftMenu from "./components/LeftMenu";
 import MobileMenu from "./components/MobileMenu";
 import SubMenu from "./components/SubMenu";
 import { Routes, Route } from "react-router-dom";
-import { findFirstParam } from "./utils/index";
+import { findParam } from "./utils/index";
 import ProjectDetail from "./components/ProjectDetail";
 import WorkDetail from "./components/WorkDetail";
 import Experiences from "./components/Experiences";
+import { useBlogContext } from "./context/BlogContext";
 
 function App() {
+  const { language } = useBlogContext();
+
   const location = useLocation();
-  const firstSegment = findFirstParam(location.pathname);
+  const firstSegment = findParam(location.pathname, 1);
 
   return (
     <main className="lg:flex block flex-1">
@@ -22,11 +25,12 @@ function App() {
         <SubMenu firstSegment={firstSegment} />
       )}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blogs/:url" element={<BlogDetail />} />
-        <Route path="/projects/:url" element={<ProjectDetail />} />
-        <Route path="/works/:url" element={<WorkDetail />} />
-        <Route path="/experiences" element={<Experiences />} />
+        <Route path="/tr" element={<Home />} />
+        <Route path="/en" element={<Home />} />
+        <Route path={`/${language}/blogs/:url`} element={<BlogDetail />} />
+        <Route path={`/${language}/projects/:url`} element={<ProjectDetail />} />
+        <Route path={`/${language}/works/:url`} element={<WorkDetail />} />
+        <Route path={`/${language}/experiences`} element={<Experiences />} />
       </Routes>
     </main>
   );

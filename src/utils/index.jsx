@@ -1,13 +1,7 @@
-export const findFirstParam = (pathname) => {
+export const findParam = (pathname, index) => {
   const pathSegments = pathname.split("/").filter(Boolean);
-  const firstSegment = pathSegments[0];
-  return firstSegment;
-};
-
-export const findSecondParam = (pathname) => {
-  const pathSegments = pathname.split("/").filter(Boolean);
-  const secondSegment = pathSegments[1];
-  return secondSegment;
+  const segment = pathSegments[index];
+  return segment;
 };
 
 export const codingStringToArray = (string) => {

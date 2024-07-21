@@ -3,7 +3,7 @@ import { blogComponents } from "../../utils/blogs";
 import { useBlogContext } from "../../context/BlogContext";
 
 function BlogList() {
-  const { setSubMenuOpen} = useBlogContext();
+  const { setSubMenuOpen, language } = useBlogContext();
   return (
     <div className="navLinks flex flex-col gap-1 text-sm">
       {blogComponents.map((blog) => {
@@ -12,7 +12,7 @@ function BlogList() {
             key={blog.id}
             onClick={() => setSubMenuOpen(false)}
             className="flex flex-col gap-1 transition-colors duration-300 hover:bg-gray-200 rounded-lg p-3"
-            to={`/blogs/${blog.url}`}
+            to={`/${language}/blogs/${blog.url}`}
           >
             <span className="font-medium">{blog.title}</span>
             <time className="transition-colors duration-300 text-slate-500">

@@ -6,20 +6,24 @@ import Works from "./SubMenuContent/Works";
 import { useBlogContext } from "../context/BlogContext";
 
 function SubMenu({ firstSegment }) {
-  const { subMenuOpen } = useBlogContext();
+  const { subMenuOpen, TEXTS } = useBlogContext();
 
   const [renderMenu, setRenderMenu] = useState();
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     switch (firstSegment) {
       case "blogs":
         setRenderMenu(<BlogList />);
+        setTitle(TEXTS.BLOGS);
         break;
       case "projects":
         setRenderMenu(<Projects />);
+        setTitle(TEXTS.PROJECTS);
         break;
       case "works":
         setRenderMenu(<Works />);
+        setTitle(TEXTS.WORKS);
         break;
       default:
         setRenderMenu(<></>);
@@ -32,9 +36,12 @@ function SubMenu({ firstSegment }) {
     <div
       className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full ${addedClass}`}
     >
-      <div style={{zIndex: 11}} className="sticky top-0 border-b bg-zinc-50 px-5 py-3">
+      <div
+        style={{ zIndex: 11 }}
+        className="sticky top-0 border-b bg-zinc-50 px-5 py-3"
+      >
         <span className="text-sm font-semibold tracking-tight capitalize">
-          {firstSegment}
+          {title}
         </span>
       </div>
       <div className="bg-zinc-50 p-3">{renderMenu}</div>
