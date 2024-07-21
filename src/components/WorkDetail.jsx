@@ -3,21 +3,23 @@ import { useEffect, useState } from "react";
 import { useBlogContext } from "../context/BlogContext";
 import { Button, Chip, Image, Link, Spinner } from "@nextui-org/react";
 import { codingStringToArray, codingValues } from "../utils";
-import { Eye } from "lucide-react";
+import { Eye, Github } from "lucide-react";
 
 function WorkDetail() {
-  const { projects, filePathUrl } = useBlogContext();
+  const { works, filePathUrl } = useBlogContext();
   const { url } = useParams();
   const [content, setContent] = useState(null);
   const [codings, setCodings] = useState([]);
 
   useEffect(() => {
-    const findContent = projects.find((b) => b.id === url);
+    const findContent = works.find((b) => b.id === url);
     if (findContent) {
       setContent(findContent);
       setCodings(codingStringToArray(findContent.coding));
     }
-  }, [projects, url]);
+  }, [works, url]);
+
+  console.log("content :>> ", content);
 
   return (
     <div className="flex flex-1">
@@ -40,6 +42,19 @@ function WorkDetail() {
               ))}
             </span>
             <div className="flex gap-4 lg:flex-row flex-col lg:fixed z-10 lg:right-12 lg:bottom-8">
+              {content.github && (
+                <Button
+                  size="lg"
+                  className="bg-black text-white lg:w-max shadow-lg"
+                  as={Link}
+                  href={content.github}
+                  target="_blank"
+                  showAnchorIcon
+                  startContent={<Github width={16}/>}
+                >
+                GitHub
+                </Button>
+              )}
               <Button
                 color="primary"
                 size="lg"
@@ -48,7 +63,7 @@ function WorkDetail() {
                 href={content.link}
                 target="_blank"
                 showAnchorIcon
-                startContent={<Eye width={16} />}
+                startContent={<Eye width={16}/>}
               >
                 Live Project
               </Button>

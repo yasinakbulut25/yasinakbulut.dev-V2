@@ -14,8 +14,17 @@
   background-color: #e5e7eb;
 }
 
+.content-html ul,
+.content-html ol {
+  margin: 16px 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style-type: none;
+}
+
 .content-html ul li,
 .content-html ol li {
-  margin-top: 12px;
   list-style-type: none;
 }

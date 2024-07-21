@@ -33,6 +33,14 @@ function getProcess(){
         $jsonData = json_encode($fetchData, JSON_UNESCAPED_UNICODE);
         echo $jsonData;
     }
+    
+    if ($requestValue && $requestValue === 'getWorks') {
+        $getData = $db->prepare("SELECT * FROM works where lang=? order by id desc");
+        $getData->execute(array($lang));
+        $fetchData = $getData->fetchAll(PDO::FETCH_ASSOC);
+        $jsonData = json_encode($fetchData, JSON_UNESCAPED_UNICODE);
+        echo $jsonData;
+    }
 
 }
 

@@ -8,9 +8,11 @@ export const Provider = ({ children }) => {
   const filePathUrl = "https://yasinakbulut.dev/";
 
   const [projects, setProjects] = useState([]);
+  const [works, setWorks] = useState([]);
 
   useEffect(() => {
     getProjects();
+    getWorks();
   }, []);
 
   const getProjects = async () => {
@@ -19,9 +21,16 @@ export const Provider = ({ children }) => {
     });
   };
 
+  const getWorks = async () => {
+    await axios.get(backendUrl + "getWorks").then(function (response) {
+      setWorks(response.data);
+    });
+  };
+
   const sharedValuesAndMethods = {
     filePathUrl,
-    projects
+    projects,
+    works
   };
 
   return (
