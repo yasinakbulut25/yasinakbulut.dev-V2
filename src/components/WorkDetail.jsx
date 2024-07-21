@@ -54,9 +54,8 @@ function WorkDetail() {
                 </Button>
               )}
               <Button
-                color="primary"
                 size="lg"
-                className="lg:w-max shadow-lg"
+                className="lg:w-max shadow-lg bg-indigo-600 text-white"
                 as={Link}
                 href={content.link}
                 target="_blank"

@@ -29,7 +29,7 @@ body {
 .content-html ul,
 .content-html ol {
   margin: 16px 0;
-  padding-left: 16px;
+  padding-left: 8px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -46,11 +46,10 @@ body {
   content: '';
   position: relative;
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 12px;
+  height: 4px;
+  border-radius: 8px;
   background-color: #4f46e5;
   margin-right: 8px;
-  top: -3px;
-  margin-left: -1em;
+  top: -4px;
 }

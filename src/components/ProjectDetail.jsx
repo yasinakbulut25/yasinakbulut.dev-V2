@@ -41,9 +41,8 @@ function WorkDetail() {
             </span>
             <div className="flex gap-4 lg:flex-row flex-col lg:fixed z-10 lg:right-12 lg:bottom-8">
               <Button
-                color="primary"
                 size="lg"
-                className="lg:w-max shadow-lg"
+                className="lg:w-max shadow-lg bg-indigo-600 text-white"
                 as={Link}
                 href={content.link}
                 target="_blank"
