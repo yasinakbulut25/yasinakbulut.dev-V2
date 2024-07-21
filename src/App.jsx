@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import { findFirstParam } from "./utils/index";
 import ProjectDetail from "./components/ProjectDetail";
 import WorkDetail from "./components/WorkDetail";
+import Experiences from "./components/Experiences";
 
 function App() {
   const location = useLocation();
@@ -17,12 +18,13 @@ function App() {
     <main className="lg:flex block flex-1">
       <MobileMenu />
       <LeftMenu />
-      {firstSegment && <SubMenu firstSegment={firstSegment} />}
+      {(firstSegment && firstSegment !== 'experiences') && <SubMenu firstSegment={firstSegment} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs/:url" element={<BlogDetail />} />
         <Route path="/projects/:url" element={<ProjectDetail />} />
         <Route path="/works/:url" element={<WorkDetail />} />
+        <Route path="/experiences" element={<Experiences />} />
       </Routes>
     </main>
   );

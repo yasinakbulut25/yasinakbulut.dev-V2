@@ -9,10 +9,12 @@ export const Provider = ({ children }) => {
 
   const [projects, setProjects] = useState([]);
   const [works, setWorks] = useState([]);
+  const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
     getProjects();
     getWorks();
+    getExperiences();
   }, []);
 
   const getProjects = async () => {
@@ -27,10 +29,17 @@ export const Provider = ({ children }) => {
     });
   };
 
+  const getExperiences = async () => {
+    await axios.get(backendUrl + "getExperiences").then(function (response) {
+      setExperiences(response.data);
+    });
+  };
+
   const sharedValuesAndMethods = {
     filePathUrl,
     projects,
-    works
+    works,
+    experiences
   };
 
   return (

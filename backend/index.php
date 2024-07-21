@@ -42,6 +42,13 @@ function getProcess(){
         echo $jsonData;
     }
 
+    if ($requestValue && $requestValue === 'getExperiences') {
+        $getData = $db->prepare("SELECT * FROM experiences where lang=? order by id desc");
+        $getData->execute(array($lang));
+        $fetchData = $getData->fetchAll(PDO::FETCH_ASSOC);
+        $jsonData = json_encode($fetchData, JSON_UNESCAPED_UNICODE);
+        echo $jsonData;
+    }
 }
 
 function postProcess()
