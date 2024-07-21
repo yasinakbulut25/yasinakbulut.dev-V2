@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { blogComponents } from "../utils/blogs";
+import { blogComponents } from "../../utils/blogs";
 
 function BlogList() {
   return (
@@ -12,7 +12,7 @@ function BlogList() {
             to={`/blogs/${blog.url}`}
           >
             <span className="font-medium">{blog.title}</span>
-            <time className="transition-colors duration-300 text-slate-400">
+            <time className="transition-colors duration-300 text-slate-500">
               {blog.date}
             </time>
           </NavLink>

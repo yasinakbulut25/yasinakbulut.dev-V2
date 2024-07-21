@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { blogComponents } from "../utils/blogs";
+import { Spinner } from "@nextui-org/react";
 
 function BlogDetail() {
   const { url } = useParams();
@@ -20,12 +21,14 @@ function BlogDetail() {
   }, [url]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner className="w-full h-20" color="default" />;
   }
 
   return (
     <div className="flex flex-1">
-      <Component />
+      <div className="scrollable-area relative flex w-full flex-col bg-white p-8">
+        <Component />
+      </div>
     </div>
   );
 }

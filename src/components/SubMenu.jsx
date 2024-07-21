@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import BlogList from "./BlogList";
 import { string } from "prop-types";
+import BlogList from "./SubMenuContent/BlogList";
+import Projects from "./SubMenuContent/Projects";
 
 function SubMenu({ firstSegment }) {
   const [renderMenu, setRenderMenu] = useState();
@@ -9,6 +10,9 @@ function SubMenu({ firstSegment }) {
     switch (firstSegment) {
       case "blogs":
         setRenderMenu(<BlogList />);
+        break;
+      case "projects":
+        setRenderMenu(<Projects />);
         break;
       default:
         setRenderMenu(<></>);

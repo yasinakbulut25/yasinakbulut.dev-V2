@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
+    "axios": "^1.7.2",
     "framer-motion": "^11.3.2",
     "lucide-react": "^0.408.0",
     "prism-react-renderer": "^2.3.1",

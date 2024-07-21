@@ -66,78 +66,74 @@ function Blog2() {
   ];
 
   return (
-    <div className="flex flex-1">
-      <div className="scrollable-area relative flex w-full flex-col bg-white p-8">
-        <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 pb-8">
-          <div className="flex gap-2 text-gray-500 font-light">
-            <CalendarDays width={18} /> April 3, 2024
-          </div>
-          <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
-            Worst practices for successful prototypes
-          </h1>
-
-          <p>
-            Flowbite is an open-source library of UI components built with the
-            utility-first classes from Tailwind CSS. It also includes
-            interactive elements such as dropdowns, modals, datepickers.
-          </p>
-
-          <ImageUI
-            src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
-            alt="Digital Image"
-          />
-          <h2>Getting started with Flowbite</h2>
-          <p>
-            Youl also receive a lot of useful application UI, marketing UI, and
-            e-commerce pages that can help you get started with your projects
-            even faster. You can check out this{" "}
-            <Link href="#" isExternal showAnchorIcon underline="hover">
-              comparison table
-            </Link>
-            to better understand the differences between the open-source and pro
-            version of Flowbite.
-          </p>
-          <ol className="space-y-2">
-            <li>
-              <strong>Usability testing</strong>. Does your user know how to
-              exit out of screens? Can they follow your intended user journey
-              and buy something from the site you’ve designed? By running a
-              usability test, you’ll be able to see how users will interact with
-              your design once it’s live;
-            </li>
-            <li>
-              <strong>Involving stakeholders</strong>. Need to check if your
-              GDPR consent boxes are displaying properly? Pass your prototype to
-              your data protection team and they can test it for real;
-            </li>
-          </ol>
-          <h3>Getting started with Flowbite</h3>
-          <p>
-            Youl also receive a lot of useful application UI, marketing UI, and
-            e-commerce pages that can help you get started with your projects
-            even faster. You can check out this{" "}
-            <Link href="#" isExternal showAnchorIcon underline="hover">
-              comparison table
-            </Link>
-            to better understand the differences between the open-source and pro
-            version of Flowbite.
-          </p>
-          <ul className="space-y-2">
-            <li>Low contrast between thick and thin strokes</li>
-            <li>Diagonal stress in the strokes</li>
-            <li>Slanted serifs on lower-case ascenders</li>
-          </ul>
-
-          <CodeBlockUI
-            code={code}
-            language={language}
-            highlightedLines={highlightedLines}
-          />
-
-          <TableUI rows={rows} columns={columns} />
-        </article>
+    <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 pb-8">
+      <div className="flex gap-2 text-gray-500 font-light">
+        <CalendarDays width={18} /> April 3, 2024
       </div>
-    </div>
+      <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
+        Worst practices for successful prototypes
+      </h1>
+
+      <p>
+        Flowbite is an open-source library of UI components built with the
+        utility-first classes from Tailwind CSS. It also includes interactive
+        elements such as dropdowns, modals, datepickers.
+      </p>
+
+      <ImageUI
+        src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
+        alt="Digital Image"
+      />
+      <h2>Getting started with Flowbite</h2>
+      <p>
+        Youl also receive a lot of useful application UI, marketing UI, and
+        e-commerce pages that can help you get started with your projects even
+        faster. You can check out this{" "}
+        <Link href="#" isExternal showAnchorIcon underline="hover">
+          comparison table
+        </Link>
+        to better understand the differences between the open-source and pro
+        version of Flowbite.
+      </p>
+      <ol className="space-y-2">
+        <li>
+          <strong>Usability testing</strong>. Does your user know how to exit
+          out of screens? Can they follow your intended user journey and buy
+          something from the site you’ve designed? By running a usability test,
+          you’ll be able to see how users will interact with your design once
+          it’s live;
+        </li>
+        <li>
+          <strong>Involving stakeholders</strong>. Need to check if your GDPR
+          consent boxes are displaying properly? Pass your prototype to your
+          data protection team and they can test it for real;
+        </li>
+      </ol>
+      <h3>Getting started with Flowbite</h3>
+      <p>
+        Youl also receive a lot of useful application UI, marketing UI, and
+        e-commerce pages that can help you get started with your projects even
+        faster. You can check out this{" "}
+        <Link href="#" isExternal showAnchorIcon underline="hover">
+          comparison table
+        </Link>
+        to better understand the differences between the open-source and pro
+        version of Flowbite.
+      </p>
+      <ul className="space-y-2">
+        <li>Low contrast between thick and thin strokes</li>
+        <li>Diagonal stress in the strokes</li>
+        <li>Slanted serifs on lower-case ascenders</li>
+      </ul>
+
+      <CodeBlockUI
+        code={code}
+        language={language}
+        highlightedLines={highlightedLines}
+      />
+
+      <TableUI rows={rows} columns={columns} />
+    </article>
   );
 }
 

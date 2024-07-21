@@ -6,6 +6,7 @@ import MobileMenu from "./components/MobileMenu";
 import SubMenu from "./components/SubMenu";
 import { Routes, Route } from "react-router-dom";
 import { findFirstParam } from "./utils/index";
+import ProjectDetail from "./components/ProjectDetail";
 
 function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs/:url" element={<BlogDetail />} />
+        <Route path="/projects/:url" element={<ProjectDetail />} />
       </Routes>
     </main>
   );
