@@ -30,7 +30,7 @@ function SubMenu({ firstSegment }) {
 
   return (
     <div
-      className={`scrollable-area lg:pt-0 pt-12 lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full ${addedClass}`}
+      className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full ${addedClass}`}
     >
       <div style={{zIndex: 11}} className="sticky top-0 border-b bg-zinc-50 px-5 py-3">
         <span className="text-sm font-semibold tracking-tight capitalize">

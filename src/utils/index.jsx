@@ -4,6 +4,12 @@ export const findFirstParam = (pathname) => {
   return firstSegment;
 };
 
+export const findSecondParam = (pathname) => {
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const secondSegment = pathSegments[1];
+  return secondSegment;
+};
+
 export const codingStringToArray = (string) => {
   return string.split('-').map(Number);
 }

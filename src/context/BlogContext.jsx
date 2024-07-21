@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+import { findFirstParam, findSecondParam } from "../utils";
 
 const BlogContext = createContext();
 
@@ -7,7 +9,10 @@ export const Provider = ({ children }) => {
   const backendUrl = "https://blogs.yasinakbulut.dev/backend/";
   const filePathUrl = "https://yasinakbulut.dev/";
 
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const location = useLocation();
+  const firstSegment = findFirstParam(location.pathname);
+  const secondSegment = findSecondParam(location.pathname);
+  const [subMenuOpen, setSubMenuOpen] = useState((firstSegment && !secondSegment) ? true : false);
 
   const [about, setAbout] = useState({});
   const [projects, setProjects] = useState([]);
@@ -26,7 +31,7 @@ export const Provider = ({ children }) => {
       setAbout(response.data);
     });
   };
-  
+
   const getProjects = async () => {
     await axios.get(backendUrl + "getProjects").then(function (response) {
       setProjects(response.data);

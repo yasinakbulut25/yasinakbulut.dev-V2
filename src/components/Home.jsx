@@ -19,11 +19,14 @@ function Home() {
   return (
     <div className="flex flex-1">
       <div className="scrollable-area relative flex w-full flex-col bg-white px-8 md:py-16 py-4">
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto py-8">
           <h1 className="flex flex-col p-0 mb-8">
-            <span className="text-md text-gray-600">👋 {about.hello}</span>
-            <span className="text-3xl flex gap-2 font-extrabold leading-tight text-gray-900 lg:text-4xl">
-              {about.ıam}
+            <span className="flex gap-1 text-md text-gray-600">
+              👋 {about.hello}
+              <span className="sm:hidden flex">{about.ıam},</span>
+            </span>
+            <span className="text-3xl flex sm:flex-row flex-col gap-2 font-extrabold leading-tight text-gray-900 lg:text-4xl">
+              <span className="sm:flex hidden">{about.ıam},</span>
               <TypeAnimation
                 className="text-indigo-600"
                 sequence={[

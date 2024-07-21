@@ -7,7 +7,7 @@ function Experiences() {
   return (
     <div className="flex flex-1">
       <div className="scrollable-area relative flex w-full flex-col bg-white px-8 md:py-16 py-4">
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto py-8">
           <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl mb-8">
             My Experiences
           </h1>

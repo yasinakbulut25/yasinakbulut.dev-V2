@@ -8,7 +8,7 @@ function MobileMenu() {
   return (
     <div
       style={{ zIndex: 20 }}
-      className="flex fixed inset-x-0 top-0 px-4 h-12 w-full items-center justify-between overflow-hidden border-b bg-white text-sm font-medium lg:hidden"
+      className="flex fixed inset-x-0 top-0 px-4 h-14 w-full items-center justify-between overflow-hidden border-b bg-white text-sm font-medium lg:hidden"
     >
       <Button
         className="px-0 data-[hover=true]:bg-transparent"

@@ -21,15 +21,13 @@ function App() {
       {firstSegment && firstSegment !== "experiences" && (
         <SubMenu firstSegment={firstSegment} />
       )}
-      <div className="lg:pt-0 pt-10 w-full">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs/:url" element={<BlogDetail />} />
-          <Route path="/projects/:url" element={<ProjectDetail />} />
-          <Route path="/works/:url" element={<WorkDetail />} />
-          <Route path="/experiences" element={<Experiences />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs/:url" element={<BlogDetail />} />
+        <Route path="/projects/:url" element={<ProjectDetail />} />
+        <Route path="/works/:url" element={<WorkDetail />} />
+        <Route path="/experiences" element={<Experiences />} />
+      </Routes>
     </main>
   );
 }
