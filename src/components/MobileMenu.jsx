@@ -1,8 +1,16 @@
-import { Modal, ModalContent, Button, useDisclosure, Link } from "@nextui-org/react";
+import {
+  Modal,
+  ModalContent,
+  Button,
+  useDisclosure,
+  Link,
+} from "@nextui-org/react";
 import Profile from "./Profile";
 import { GanttChart, Github } from "lucide-react";
+import { useBlogContext } from "../context/BlogContext";
 
 function MobileMenu() {
+  const { TEXTS } = useBlogContext();
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 
   return (
@@ -11,22 +19,22 @@ function MobileMenu() {
       className="flex fixed inset-x-0 top-0 px-4 h-14 w-full items-center justify-between overflow-hidden border-b bg-white text-sm font-medium lg:hidden"
     >
       <Button
-        className="px-0 data-[hover=true]:bg-transparent"
+        className="px-0 data-[hover=true]:bg-transparent font-semibold"
         onPress={onOpen}
         variant="light"
       >
-        <GanttChart /> Menu
+        <GanttChart /> {TEXTS.MENU}
       </Button>
       <Button
         size="sm"
         className="bg-black text-white lg:w-max shadow-lg"
         as={Link}
-        href='https://github.com/yasinakbulut25'
+        href="https://github.com/yasinakbulut25"
         target="_blank"
         showAnchorIcon
         startContent={<Github width={16} />}
       >
-        My GitHub
+        GitHub
       </Button>
       <Modal
         isOpen={isOpen}

@@ -21,7 +21,7 @@ function Profile({ closeMenu }) {
 
   const handleLanguageClick = () => {
     setLang(language === "tr" ? 1 : 0);
-    window.location.href = language === 'tr' ? '/en' : '/tr';
+    window.location.href = language === "tr" ? "/en" : "/tr";
   };
 
   return (

@@ -28,7 +28,10 @@ function App() {
         <Route path="/tr" element={<Home />} />
         <Route path="/en" element={<Home />} />
         <Route path={`/${language}/blogs/:url`} element={<BlogDetail />} />
-        <Route path={`/${language}/projects/:url`} element={<ProjectDetail />} />
+        <Route
+          path={`/${language}/projects/:url`}
+          element={<ProjectDetail />}
+        />
         <Route path={`/${language}/works/:url`} element={<WorkDetail />} />
         <Route path={`/${language}/experiences`} element={<Experiences />} />
       </Routes>

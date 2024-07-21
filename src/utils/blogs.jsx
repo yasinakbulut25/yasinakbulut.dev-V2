@@ -1,5 +1,5 @@
-import Blog1 from '../content/blog/Blog1';
-import Blog2 from '../content/blog/Blog2';
+import Blog1 from "../content/blog/Blog1";
+import Blog2 from "../content/blog/Blog2";
 
 export const blogComponents = [
   {

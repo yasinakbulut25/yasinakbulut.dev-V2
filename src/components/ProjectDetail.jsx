@@ -6,7 +6,7 @@ import { codingStringToArray, codingValues } from "../utils";
 import { Eye } from "lucide-react";
 
 function WorkDetail() {
-  const { projects, filePathUrl } = useBlogContext();
+  const { projects, filePathUrl, TEXTS } = useBlogContext();
   const { url } = useParams();
   const [content, setContent] = useState(null);
   const [codings, setCodings] = useState([]);
@@ -50,7 +50,7 @@ function WorkDetail() {
                 showAnchorIcon
                 startContent={<Eye width={16} />}
               >
-                Live Project
+                {TEXTS.LIVE_PROJECT}
               </Button>
             </div>
           </article>

@@ -6,7 +6,7 @@ import { codingStringToArray, codingValues } from "../utils";
 import { Eye, Github } from "lucide-react";
 
 function WorkDetail() {
-  const { works, filePathUrl } = useBlogContext();
+  const { works, filePathUrl, TEXTS } = useBlogContext();
   const { url } = useParams();
   const [content, setContent] = useState(null);
   const [codings, setCodings] = useState([]);
@@ -18,8 +18,6 @@ function WorkDetail() {
       setCodings(codingStringToArray(findContent.coding));
     }
   }, [works, url]);
-
-  console.log("content :>> ", content);
 
   return (
     <div className="flex flex-1">
@@ -50,9 +48,9 @@ function WorkDetail() {
                   href={content.github}
                   target="_blank"
                   showAnchorIcon
-                  startContent={<Github width={16}/>}
+                  startContent={<Github width={16} />}
                 >
-                GitHub
+                  GitHub
                 </Button>
               )}
               <Button
@@ -63,9 +61,9 @@ function WorkDetail() {
                 href={content.link}
                 target="_blank"
                 showAnchorIcon
-                startContent={<Eye width={16}/>}
+                startContent={<Eye width={16} />}
               >
-                Live Project
+                {TEXTS.LIVE_PROJECT}
               </Button>
             </div>
           </article>

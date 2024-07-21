@@ -5,19 +5,19 @@ export const findParam = (pathname, index) => {
 };
 
 export const codingStringToArray = (string) => {
-  return string.split('-').map(Number);
-}
+  return string.split("-").map(Number);
+};
 
 export const codingValues = [
-  'Wordpress',
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React',
-  'PHP',
-  'MySql',
-  'Bootstrap',
-  'iyzico',
-  'API',
-  'Tailwind',
-]
+  "Wordpress",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "PHP",
+  "MySql",
+  "Bootstrap",
+  "iyzico",
+  "API",
+  "Tailwind",
+];

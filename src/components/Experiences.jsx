@@ -2,7 +2,7 @@ import { Avatar, Spinner } from "@nextui-org/react";
 import { useBlogContext } from "../context/BlogContext";
 
 function Experiences() {
-  const { experiences, filePathUrl } = useBlogContext();
+  const { experiences, filePathUrl, TEXTS } = useBlogContext();
 
   return (
     <div className="flex flex-1">
@@ -10,7 +10,7 @@ function Experiences() {
         {experiences.length > 0 ? (
           <div className="max-w-xl mx-auto pb-8 lg:pt-0 pt-8">
             <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl mb-8">
-              My Experiences
+              {TEXTS.MY_EXPERIENCES}
             </h1>
             <ol className="relative border-l border-gray-200">
               {experiences.map((experince) => (

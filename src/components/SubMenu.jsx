@@ -40,7 +40,7 @@ function SubMenu({ firstSegment }) {
         style={{ zIndex: 11 }}
         className="sticky top-0 border-b bg-zinc-50 px-5 py-3"
       >
-        <span className="text-sm font-semibold tracking-tight capitalize">
+        <span className="text-sm font-bold tracking-tight capitalize">
           {title}
         </span>
       </div>

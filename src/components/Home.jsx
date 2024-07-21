@@ -14,7 +14,7 @@ import GitHub from "../assets/github.svg";
 import Cpanel from "../assets/cpanel.svg";
 
 function Home() {
-  const { about } = useBlogContext();
+  const { about, TEXTS } = useBlogContext();
 
   console.log("about :>> ", about);
   return (
@@ -58,13 +58,17 @@ function Home() {
             </Button>
 
             <span className="block text-sm font-normal text-gray-500 mt-6">
-              I prepared my resume with the system I developed myself :)
+              {TEXTS.CV_TEXT}
             </span>
 
             <div className="flex gap-4 flex-col my-8">
               <h2 className="text-2xl font-extrabold leading-tight text-gray-900 lg:text-3xl">
-                What I Used?
+                {TEXTS.WHAT_I_USED}
               </h2>
+
+              <span className="block text-sm font-normal text-gray-500 mt-2 mb-2">
+                {TEXTS.WHAT_I_USED_DESC}
+              </span>
 
               <div className="flex flex-wrap gap-4">
                 <div className="flex flex-col gap-1 text-center border border-slate-100 p-4 rounded-lg hover:bg-slate-50 hover:scale-110 duration-300">
