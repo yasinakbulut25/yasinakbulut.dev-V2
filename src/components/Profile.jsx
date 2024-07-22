@@ -64,7 +64,7 @@ function Profile({ closeMenu }) {
             <Home width={16} /> {TEXTS.HOME}
           </span>
         </Button>
-        <Button
+{/*         <Button
           to={`/${language}/blogs`}
           as={NavLink}
           onClick={() => setSubMenuOpen(true)}
@@ -77,7 +77,7 @@ function Profile({ closeMenu }) {
           <span className="flex items-center gap-2 ">
             <PencilLine width={16} /> {TEXTS.BLOGS}
           </span>
-        </Button>
+        </Button> */}
         <Button
           to={`/${language}/projects`}
           as={NavLink}
@@ -136,7 +136,7 @@ function Profile({ closeMenu }) {
           size="sm"
           className="w-full min-w-full rounded-md font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-10"
         >
-          Dark Theme
+          {TEXTS.DARK_THEME}
         </Switch>
       </div>
       <Divider className="my-4 dark:bg-slate-700" />
