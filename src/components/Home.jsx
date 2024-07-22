@@ -16,7 +16,6 @@ import Cpanel from "../assets/cpanel.svg";
 function Home() {
   const { about, TEXTS } = useBlogContext();
 
-  console.log("about :>> ", about);
   return (
     <>
       {about ? (

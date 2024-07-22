@@ -6,26 +6,43 @@ import {
   Link,
 } from "@nextui-org/react";
 import Profile from "./Profile";
-import { GanttChart, Github } from "lucide-react";
+import { GanttChart, Github, ArrowLeft } from "lucide-react";
 import { useBlogContext } from "../context/BlogContext";
 import { LINKS } from "../utils/constants";
+import { findParam } from "../utils";
+import { NavLink, useLocation } from "react-router-dom";
 
 function MobileMenu() {
-  const { TEXTS } = useBlogContext();
+  const location = useLocation();
+  const { TEXTS, language, setSubMenuOpen } = useBlogContext();
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+  const isDetailPage = findParam(location.pathname, 2);
+  const prevPagePath = findParam(location.pathname, 1);
 
   return (
     <div
       style={{ zIndex: 20 }}
       className="flex fixed inset-x-0 top-0 px-4 h-14 w-full items-center justify-between overflow-hidden border-b bg-white text-sm font-medium lg:hidden"
     >
-      <Button
-        className="px-0 data-[hover=true]:bg-transparent font-semibold"
-        onClick={onOpen}
-        variant="light"
-      >
-        <GanttChart /> {TEXTS.MENU}
-      </Button>
+      <div className="flex items-center gap-4">
+        {isDetailPage && (
+          <Button
+            size="sm"
+            as={NavLink}
+            to={`${language}/${prevPagePath}`}
+            onClick={() => setSubMenuOpen(true)}
+            className="h-auto min-w-0 p-2 bg-transparent lg:hidden flex"
+            startContent={<ArrowLeft width={16} />}
+          />
+        )}
+        <Button
+          className="px-0 data-[hover=true]:bg-transparent font-semibold"
+          onClick={onOpen}
+          variant="light"
+        >
+          <GanttChart /> {TEXTS.MENU}
+        </Button>
+      </div>
       <Button
         size="sm"
         className="bg-black text-white lg:w-max shadow-lg"

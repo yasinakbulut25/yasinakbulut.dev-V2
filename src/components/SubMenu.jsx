@@ -34,7 +34,7 @@ function SubMenu({ firstSegment }) {
 
   return (
     <div
-      className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full ${addedClass}`}
+      className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full z-10 ${addedClass}`}
     >
       <div
         style={{ zIndex: 11 }}

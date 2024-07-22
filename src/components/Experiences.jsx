@@ -7,7 +7,7 @@ function Experiences() {
   return (
     <>
       {experiences.length > 0 ? (
-        <div className="max-w-xl mx-auto pb-8 lg:pt-0 pt-8">
+        <div className="max-w-xl mx-auto py-8">
           <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl mb-8">
             {TEXTS.MY_EXPERIENCES}
           </h1>
