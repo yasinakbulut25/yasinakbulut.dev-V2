@@ -22,7 +22,7 @@ function MobileMenu() {
   return (
     <div
       style={{ zIndex: 20 }}
-      className="flex fixed inset-x-0 top-0 px-4 h-14 w-full items-center justify-between overflow-hidden border-b bg-white text-sm font-medium lg:hidden"
+      className="flex fixed inset-x-0 top-0 px-4 h-14 w-full items-center justify-between overflow-hidden border-b bg-zinc-50 dark:bg-slate-900 dark:border-slate-700 text-sm font-medium lg:hidden"
     >
       <div className="flex items-center gap-4">
         {isDetailPage && (
@@ -31,12 +31,12 @@ function MobileMenu() {
             as={NavLink}
             to={`${language}/${prevPagePath}`}
             onClick={() => setSubMenuOpen(true)}
-            className="h-auto min-w-0 p-2 bg-transparent lg:hidden flex"
+            className="h-auto min-w-0 p-2 bg-transparent lg:hidden flex dark:text-slate-300"
             startContent={<ArrowLeft width={16} />}
           />
         )}
         <Button
-          className="px-0 data-[hover=true]:bg-transparent font-semibold"
+          className="px-0 data-[hover=true]:bg-transparent font-semibold dark:text-slate-300"
           onClick={onOpen}
           variant="light"
         >
@@ -45,7 +45,7 @@ function MobileMenu() {
       </div>
       <Button
         size="sm"
-        className="bg-black text-white lg:w-max shadow-lg"
+        className="bg-black dark:bg-slate-800 text-white dark:text-slate-300 lg:w-max shadow-lg"
         as={Link}
         href={LINKS.GITHUB}
         target="_blank"
@@ -59,10 +59,10 @@ function MobileMenu() {
         size="lg"
         placement="bottom"
         onOpenChange={onOpenChange}
-        className="absolute sm:my-0 rounded-bl-none rounded-br-none"
+        className="absolute sm:my-0 rounded-bl-none rounded-br-none dark:bg-slate-900"
       >
         <ModalContent className="my-0">
-          <div className="absolute-top-0 w-28 h-2 bg-gray-200 rounded-full mx-auto mt-2"></div>
+          <div className="absolute-top-0 w-28 h-2 bg-gray-200 dark:bg-slate-800 rounded-full mx-auto mt-2"></div>
           <div className="p-6">
             <Profile closeMenu={onClose} />
           </div>

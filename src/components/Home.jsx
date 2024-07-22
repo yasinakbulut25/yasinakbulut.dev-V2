@@ -69,7 +69,7 @@ function Home() {
             </span>
 
             <div className="flex flex-wrap gap-4">
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -78,7 +78,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">React</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -87,7 +87,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">NextUI</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -98,7 +98,7 @@ function Home() {
                   Tailwind
                 </h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -107,7 +107,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">GitHub</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -116,7 +116,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">Vite</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -125,7 +125,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">Axios</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -136,7 +136,7 @@ function Home() {
                   Lucide React
                 </h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -145,7 +145,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">PHP</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -154,7 +154,7 @@ function Home() {
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">Cpanel</h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <Image
                   className="object-cover"
                   width={100}
@@ -165,7 +165,7 @@ function Home() {
                   React Router Dom
                 </h3>
               </div>
-              <div className="flex flex-col gap-1 text-center border border-slate-100 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <span className="block text-[65px]">🧩</span>
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">
                   React Code Block
