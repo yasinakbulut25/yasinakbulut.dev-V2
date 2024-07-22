@@ -24,13 +24,7 @@ function BlogDetail() {
     return <Spinner className="w-full h-20" color="default" />;
   }
 
-  return (
-    <div className="flex flex-1">
-      <div className="scrollable-area relative flex w-full flex-col bg-white p-8">
-        <Component />
-      </div>
-    </div>
-  );
+  return <Component />;
 }
 
 export default BlogDetail;

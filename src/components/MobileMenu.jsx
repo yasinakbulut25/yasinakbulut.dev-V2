@@ -8,6 +8,7 @@ import {
 import Profile from "./Profile";
 import { GanttChart, Github } from "lucide-react";
 import { useBlogContext } from "../context/BlogContext";
+import { LINKS } from "../utils/constants";
 
 function MobileMenu() {
   const { TEXTS } = useBlogContext();
@@ -29,7 +30,7 @@ function MobileMenu() {
         size="sm"
         className="bg-black text-white lg:w-max shadow-lg"
         as={Link}
-        href="https://github.com/yasinakbulut25"
+        href={LINKS.GITHUB}
         target="_blank"
         showAnchorIcon
         startContent={<Github width={16} />}

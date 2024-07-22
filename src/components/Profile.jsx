@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../context/BlogContext";
+import { LINKS } from "../utils/constants";
 
 function Profile({ closeMenu }) {
   const { setSubMenuOpen, language, setLang, TEXTS } = useBlogContext();
@@ -126,7 +127,7 @@ function Profile({ closeMenu }) {
         </h4>
         <div className="flex flex-col gap-2">
           <Button
-            href="https://github.com/yasinakbulut25"
+            href={LINKS.GITHUB}
             as={Link}
             isExternal
             showAnchorIcon
@@ -139,7 +140,7 @@ function Profile({ closeMenu }) {
             </span>
           </Button>
           <Button
-            href="https://www.linkedin.com/in/yasinakbulut/"
+            href={LINKS.LINKEDIN}
             as={Link}
             isExternal
             showAnchorIcon
@@ -152,7 +153,7 @@ function Profile({ closeMenu }) {
             </span>
           </Button>
           <Button
-            href="https://www.instagram.com/yasinakbulut_23/"
+            href={LINKS.INSTAGRAM}
             as={Link}
             isExternal
             showAnchorIcon
@@ -165,7 +166,7 @@ function Profile({ closeMenu }) {
             </span>
           </Button>
           <Button
-            href="mailto:akbulutyasin07@gmail.com"
+            href={`mailto:${LINKS.EMAIL}`}
             as={Link}
             isExternal
             showAnchorIcon

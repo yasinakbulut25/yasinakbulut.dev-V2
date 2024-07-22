@@ -32,3 +32,10 @@ export const languagesTexts = {
     LIVE_PROJECT: "Live Project",
   },
 };
+
+export const LINKS = {
+  GITHUB: 'https://github.com/yasinakbulut25',
+  LINKEDIN: 'https://www.linkedin.com/in/yasinakbulut/',
+  INSTAGRAM: 'https://www.instagram.com/yasinakbulut_24/',
+  EMAIL: 'akbulutyasin07@gmail.com',
+}
