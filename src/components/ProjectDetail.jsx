@@ -22,18 +22,23 @@ function WorkDetail() {
   return (
     <>
       {content ? (
-        <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 pb-8 lg:pt-0 pt-8">
-          <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
+        <article className="flex flex-col gap-4 lg:border-transparent border-b border-slate-200 dark:border-slate-700 pb-8 lg:pt-0 pt-8">
+          <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 dark:text-slate-300 lg:text-4xl">
             {content.name}
           </h1>
           <Image src={filePathUrl + content.image} alt={content.name} />
           <div
-            className="content-html text-md text-gray-800"
+            className="content-html text-md text-gray-800 dark:text-slate-400"
             dangerouslySetInnerHTML={{ __html: content.exp }}
           ></div>
           <span className="flex flex-wrap gap-2 my-4">
             {codings.map((code, index) => (
-              <Chip key={index} variant="flat" size="sm">
+              <Chip
+                key={index}
+                variant="flat"
+                size="sm"
+                className="dark:bg-slate-700/40 dark:text-slate-400"
+              >
                 {codingValues[code]}
               </Chip>
             ))}

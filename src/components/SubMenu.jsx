@@ -34,17 +34,17 @@ function SubMenu({ firstSegment }) {
 
   return (
     <div
-      className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full z-10 ${addedClass}`}
+      className={`scrollable-area lg:relative absolute flex-col bg-zinc-50 lg:border-r lg:min-w-[350px] lg:max-w-[350px] w-full z-10 ${addedClass} dark:bg-gray-900 dark:border-slate-700`}
     >
       <div
         style={{ zIndex: 11 }}
-        className="sticky top-0 border-b bg-zinc-50 px-5 py-3"
+        className="sticky top-0 border-b dark:border-slate-700 dark:bg-slate-900 px-5 py-3"
       >
-        <span className="text-sm font-bold tracking-tight capitalize">
+        <span className="text-sm font-bold tracking-tight capitalize dark:text-slate-300">
           {title}
         </span>
       </div>
-      <div className="bg-zinc-50 p-3">{renderMenu}</div>
+      <div className="bg-zinc-50 dark:bg-gray-900 p-3 z-1">{renderMenu}</div>
     </div>
   );
 }

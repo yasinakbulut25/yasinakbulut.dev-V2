@@ -25,7 +25,7 @@ function App() {
         <SubMenu firstSegment={firstSegment} />
       )}
       <div className="flex flex-1">
-        <div className="scrollable-area relative flex w-full flex-col bg-white p-8">
+        <div className="scrollable-area relative flex w-full flex-col bg-zinc-50 dark:bg-slate-900 p-8">
           <Routes>
             <Route path="/tr" element={<Home />} />
             <Route path="/en" element={<Home />} />

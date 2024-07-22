@@ -26,6 +26,11 @@ export const Provider = ({ children }) => {
     firstSegment && !secondSegment ? true : false
   );
 
+  const localStorageParam = "YasinV2Theme";
+  const [theme, setTheme] = useState(
+    localStorage.getItem(localStorageParam) || "light"
+  );
+
   const [about, setAbout] = useState();
   const [projects, setProjects] = useState([]);
   const [works, setWorks] = useState([]);
@@ -37,6 +42,29 @@ export const Provider = ({ children }) => {
     getWorks();
     getExperiences();
   }, [lang]);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem(localStorageParam);
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      localStorage.setItem(localStorageParam, "light");
+    }
+    applyTheme(storedTheme || "light");
+  }, []);
+
+  const applyTheme = (theme) => {
+    if (document) {
+      document.body.className = theme;
+    }
+  };
+
+  const handleThemeChange = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    localStorage.setItem(localStorageParam, newTheme);
+    applyTheme(newTheme);
+    setTheme(newTheme);
+  };
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -73,6 +101,7 @@ export const Provider = ({ children }) => {
       });
   };
 
+  console.log("theme :>> ", theme);
   const sharedValuesAndMethods = {
     filePathUrl,
     projects,
@@ -84,6 +113,8 @@ export const Provider = ({ children }) => {
     setLang,
     setSubMenuOpen,
     TEXTS,
+    theme,
+    handleThemeChange,
   };
 
   return (
