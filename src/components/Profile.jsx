@@ -126,7 +126,7 @@ function Profile({ closeMenu }) {
           radius="sm"
           className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
-          <span className="flex items-center gap-2 ">
+          <span className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
             <Languages width={16} /> {TEXTS.LANGUAGE}
           </span>
         </Button>

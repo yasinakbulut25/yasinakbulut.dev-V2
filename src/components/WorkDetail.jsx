@@ -47,7 +47,7 @@ function WorkDetail() {
             {content.github && (
               <Button
                 size="lg"
-                className="bg-black text-white lg:w-max shadow-lg"
+                className="bg-black dark:bg-slate-800 text-white dark:text-slate-300 lg:w-max shadow-lg"
                 as={Link}
                 href={content.github}
                 target="_blank"

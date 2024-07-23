@@ -38,7 +38,7 @@ function SubMenu({ firstSegment }) {
     >
       <div
         style={{ zIndex: 11 }}
-        className="sticky top-0 border-b dark:border-slate-700 dark:bg-slate-900 px-5 py-3"
+        className="sticky top-0 border-b bg-zinc-50 dark:border-slate-700 dark:bg-slate-900 px-5 py-3"
       >
         <span className="text-sm font-bold tracking-tight capitalize dark:text-slate-300">
           {title}

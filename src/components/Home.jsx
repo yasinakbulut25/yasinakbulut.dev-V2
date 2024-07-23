@@ -12,6 +12,7 @@ import ReactRouter from "../assets/reactRouterDom.svg";
 import Php from "../assets/php.svg";
 import GitHub from "../assets/github.svg";
 import Cpanel from "../assets/cpanel.svg";
+import MySql from "../assets/mysql.svg";
 
 function Home() {
   const { about, TEXTS } = useBlogContext();
@@ -25,7 +26,7 @@ function Home() {
               👋 {about.hello}
               <span className="sm:hidden flex">{about.ıam},</span>
             </span>
-            <span className="text-3xl flex sm:flex-row flex-col gap-2 font-extrabold leading-tight text-gray-900 lg:text-4xl">
+            <span className="text-2xl md:text-3xl lg:text-4xl flex sm:flex-row flex-col gap-2 font-extrabold leading-tight text-gray-900">
               <span className="sm:flex hidden dark:text-slate-400">{about.ıam},</span>
               <TypeAnimation
                 className="text-indigo-600 dark:text-indigo-500"
@@ -150,6 +151,15 @@ function Home() {
                   className="object-cover"
                   width={100}
                   height={100}
+                  src={MySql}
+                />
+                <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">MySQL</h3>
+              </div>
+              <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
+                <Image
+                  className="object-cover"
+                  width={100}
+                  height={100}
                   src={Cpanel}
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">Cpanel</h3>
@@ -162,13 +172,13 @@ function Home() {
                   src={ReactRouter}
                 />
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">
-                  React Router Dom
+                  React Router
                 </h3>
               </div>
               <div className="flex flex-col gap-1 text-center border border-slate-200 dark:border-slate-700 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-110 duration-300">
                 <span className="block text-[65px]">🧩</span>
                 <h3 className="text-md font-semibold text-gray-900 dark:text-slate-500">
-                  React Code Block
+                  Code Block
                 </h3>
               </div>
             </div>
