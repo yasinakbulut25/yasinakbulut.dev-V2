@@ -1,7 +1,6 @@
-import { Button, Image, Spinner } from "@nextui-org/react";
+import { Button, Image, Spinner, Link } from "@nextui-org/react";
 import { useBlogContext } from "../context/BlogContext";
 import { TypeAnimation } from "react-type-animation";
-import { Download } from "lucide-react";
 import ReactIcon from "../assets/react.svg";
 import TailwindIcon from "../assets/tailwind.svg";
 import ViteIcon from "../assets/vite.svg";
@@ -51,7 +50,10 @@ function Home() {
 
           <Button
             className="bg-black text-white mt-4 dark:bg-slate-800 dark:text-slate-300"
-            endContent={<Download width={16} />}
+            as={Link}
+            isExternal
+            showAnchorIcon
+            href="https://me.yasinakbulut.dev"
           >
             {about.download}
           </Button>
