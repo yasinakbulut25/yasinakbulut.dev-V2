@@ -19,7 +19,7 @@ jobs:
     - name: Build project
       run: npm run build  # React projenizin build komutunu çalıştırın
       env:
-        VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
+        VITE_BACKEND_URL: ${{ secrets.REACT_APP_API_URL }}
         VITE_FILE_PATH_URL: ${{ secrets.VITE_FILE_PATH_URL }}
 
     - name: Deploy via FTP
