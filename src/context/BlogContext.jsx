@@ -101,7 +101,6 @@ export const Provider = ({ children }) => {
       });
   };
 
-  console.log("theme :>> ", theme);
   const sharedValuesAndMethods = {
     filePathUrl,
     projects,
