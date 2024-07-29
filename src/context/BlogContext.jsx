@@ -7,8 +7,8 @@ import { languagesTexts } from "../utils/constants";
 const BlogContext = createContext();
 
 export const Provider = ({ children }) => {
-  const backendUrl = "https://blogs.yasinakbulut.dev/backend/";
-  const filePathUrl = "https://yasinakbulut.dev/";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const filePathUrl = import.meta.env.VITE_FILE_PATH_URL;
 
   const navigate = useNavigate();
   const location = useLocation();
