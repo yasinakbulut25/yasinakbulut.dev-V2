@@ -6,7 +6,6 @@ import {
   Instagram,
   AtSign,
   Linkedin,
-  PencilLine,
   FolderOpenDot,
   CodeXml,
   Award,
@@ -34,7 +33,7 @@ function Profile({ closeMenu }) {
           <span className="flex gap-1 text-xs dark:text-slate-500">
             Jr. UI Developer
             <Link
-              href="@Jotform"
+              href="https://jotform.com"
               className="text-xs text-slate-400 dark:text-slate-500"
               isExternal
             >
