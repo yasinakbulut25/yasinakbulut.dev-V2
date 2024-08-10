@@ -30,7 +30,7 @@ function BookmarksDetail() {
 
   return (
     <div className="flex flex-col gap-4 lg:border-transparent pb-8 lg:pt-0 pt-8">
-      <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 dark:text-slate-300 lg:text-4xl">
+      <h1 className="p-0 text-3xl font-bold leading-tight text-gray-900 dark:text-slate-300 lg:text-4xl">
         {bookmarkList.title}
       </h1>
       <div className="grid xl:grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 gap-4">

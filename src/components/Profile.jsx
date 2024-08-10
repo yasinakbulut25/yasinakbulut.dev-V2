@@ -28,7 +28,7 @@ function Profile({ closeMenu }) {
   return (
     <div className="flex flex-col gap-2">
       <User
-        className="gap-4 justify-start dark:text-slate-100"
+        className="gap-4 justify-start dark:text-slate-100 font-medium"
         name="Yasin Akbulut"
         description={
           <span className="flex gap-1 text-xs dark:text-slate-500">
@@ -57,7 +57,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
           end
         >
           <span className="flex items-center gap-2 ">
@@ -72,7 +72,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
             <PencilLine width={16} /> {TEXTS.BLOGS}
@@ -86,7 +86,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2">
             <FolderOpenDot width={16} /> {TEXTS.PROJECTS}
@@ -100,7 +100,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2">
             <CodeXml width={16} /> {TEXTS.WORKS}
@@ -113,7 +113,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2 ">
             <Award width={16} /> {TEXTS.EXPERIENCES}
@@ -127,7 +127,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2">
             <Bookmark width={16} /> {TEXTS.BOOKMARKS}
@@ -138,7 +138,7 @@ function Profile({ closeMenu }) {
           isExternal
           variant="light"
           radius="sm"
-          className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
         >
           <span className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
             <Languages width={16} /> {TEXTS.LANGUAGE}
@@ -148,7 +148,7 @@ function Profile({ closeMenu }) {
           isSelected={theme === "dark"}
           onValueChange={handleThemeChange}
           size="sm"
-          className="w-full min-w-full rounded-md font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-10"
+          className="w-full min-w-full rounded-md data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-10"
         >
           {TEXTS.DARK_THEME}
         </Switch>
@@ -166,7 +166,7 @@ function Profile({ closeMenu }) {
             showAnchorIcon
             variant="light"
             radius="sm"
-            className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+            className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
           >
             <span className="flex items-center gap-2">
               <Github width={16} /> GitHub
@@ -179,7 +179,7 @@ function Profile({ closeMenu }) {
             showAnchorIcon
             variant="light"
             radius="sm"
-            className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+            className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
           >
             <span className="flex items-center gap-2 ">
               <Linkedin width={16} /> Linkedin
@@ -192,7 +192,7 @@ function Profile({ closeMenu }) {
             showAnchorIcon
             variant="light"
             radius="sm"
-            className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+            className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
           >
             <span className="flex items-center gap-2 ">
               <Instagram width={16} /> Instagram
@@ -205,7 +205,7 @@ function Profile({ closeMenu }) {
             showAnchorIcon
             variant="light"
             radius="sm"
-            className="w-full justify-between font-medium data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+            className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
           >
             <span className="flex items-center gap-2 ">
               <AtSign width={16} /> Email

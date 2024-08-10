@@ -70,7 +70,7 @@ function Blog2() {
       <div className="flex gap-2 text-gray-500 font-light">
         <CalendarDays width={18} /> April 3, 2024
       </div>
-      <h1 className="p-0 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
+      <h1 className="p-0 text-3xl font-bold leading-tight text-gray-900 lg:text-4xl">
         Worst practices for successful prototypes
       </h1>
 

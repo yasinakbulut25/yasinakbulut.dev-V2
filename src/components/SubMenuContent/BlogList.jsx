@@ -14,7 +14,7 @@ function BlogList() {
             className="flex flex-col gap-1 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-slate-800 rounded-lg p-3"
             to={`/${language}/blogs/${blog.url}`}
           >
-            <span className="font-medium dark:text-slate-300">{blog.title}</span>
+            <span className="font-semibold dark:text-slate-300">{blog.title}</span>
             <time className="transition-colors duration-300 text-slate-500 dark:text-slate-500">
               {blog.date}
             </time>

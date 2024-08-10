@@ -18,7 +18,7 @@ function Projects() {
               className="flex flex-col gap-3 transition-colors duration-300 border border-slate-200 hover:bg-gray-200 dark:border-slate-700 dark:hover:bg-gray-800 rounded-lg p-3 max-w-[325px]"
               to={`/${language}/projects/${project.id}`}
             >
-              <span className="font-medium dark:text-slate-300">
+              <span className="font-semibold dark:text-slate-300">
                 {project.name}
               </span>
               <Image

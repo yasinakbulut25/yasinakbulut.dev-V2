@@ -25,7 +25,7 @@ function Home() {
               👋 {about.hello}
               <span className="sm:hidden flex">{about.ıam},</span>
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl flex sm:flex-row flex-col gap-2 font-extrabold leading-tight text-gray-900">
+            <span className="text-2xl md:text-3xl lg:text-4xl flex sm:flex-row flex-col gap-2 font-bold leading-tight text-gray-900">
               <span className="sm:flex hidden dark:text-slate-400">{about.ıam},</span>
               <TypeAnimation
                 className="text-indigo-600 dark:text-indigo-500"
@@ -63,7 +63,7 @@ function Home() {
           </span>
 
           <div className="flex gap-4 flex-col my-8">
-            <h2 className="text-2xl font-extrabold leading-tight text-gray-900 dark:text-slate-400 lg:text-3xl">
+            <h2 className="text-2xl font-bold leading-tight text-gray-900 dark:text-slate-400 lg:text-3xl">
               {TEXTS.WHAT_I_USED}
             </h2>
 

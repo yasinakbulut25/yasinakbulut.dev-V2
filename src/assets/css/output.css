@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*
 ! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
@@ -3841,8 +3841,7 @@ video {
 }
 
 body {
-  font-family: "Comfortaa", sans-serif;
-  letter-spacing: 0.5px;
+  font-family: "Montserrat", sans-serif;
 }
 
 body.light {
