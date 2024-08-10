@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { blogComponents } from "../../utils/blogs";
 import { useBlogContext } from "../../context/BlogContext";
+import { blogComponents } from "../../content/blog/blogs";
 
 function BlogList() {
   const { setSubMenuOpen, language } = useBlogContext();

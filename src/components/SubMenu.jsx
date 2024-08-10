@@ -4,6 +4,7 @@ import BlogList from "./SubMenuContent/BlogList";
 import Projects from "./SubMenuContent/Projects";
 import Works from "./SubMenuContent/Works";
 import { useBlogContext } from "../context/BlogContext";
+import Bookmarks from "./SubMenuContent/Bookmarks";
 
 function SubMenu({ firstSegment }) {
   const { subMenuOpen, TEXTS } = useBlogContext();
@@ -25,6 +26,10 @@ function SubMenu({ firstSegment }) {
         setRenderMenu(<Works />);
         setTitle(TEXTS.WORKS);
         break;
+      case "bookmarks":
+        setRenderMenu(<Bookmarks />);
+        setTitle(TEXTS.BOOKMARKS);
+        break;
       default:
         setRenderMenu(<></>);
     }
@@ -38,7 +43,7 @@ function SubMenu({ firstSegment }) {
     >
       <div
         style={{ zIndex: 11 }}
-        className="sticky top-0 border-b bg-zinc-50 dark:border-slate-700 dark:bg-slate-900 px-5 py-3"
+        className="sticky top-0 border-b bg-zinc-50 dark:border-slate-700 dark:bg-gray-900 px-5 py-3"
       >
         <span className="text-sm font-bold tracking-tight capitalize dark:text-slate-300">
           {title}

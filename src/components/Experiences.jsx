@@ -14,7 +14,7 @@ function Experiences() {
           <ol className="relative border-l border-gray-200 dark:border-slate-700">
             {experiences.map((experince) => (
               <li key={experince.id} className="mb-10 ms-12">
-                <span className="absolute flex items-center justify-center rounded-full -start-7 ring-8 ring-slate-100 dark:ring-slate-900">
+                <span className="absolute flex items-center justify-center rounded-full -start-7 ring-8 ring-transparent dark:ring-slate-900">
                   <Avatar
                     size="lg"
                     radius="lg"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { blogComponents } from "../utils/blogs";
 import { Spinner } from "@nextui-org/react";
+import { blogComponents } from "../content/blog/blogs";
 
 function BlogDetail() {
   const { url } = useParams();

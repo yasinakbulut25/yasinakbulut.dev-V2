@@ -14,7 +14,8 @@ export const languagesTexts = {
       "Bu projeyi geliştirirken ve yayınlarken kullandığım yazılım teknolojileri ve kütüphaneler.",
     LANGUAGE: "English",
     LIVE_PROJECT: "Canlıda Göster",
-    DARK_THEME: 'Karanlık Tema'
+    DARK_THEME: 'Karanlık Tema',
+    BOOKMARKS: 'Bookmarks'
   },
   1: {
     MENU: "Menu",
@@ -31,7 +32,8 @@ export const languagesTexts = {
       "Software technologies and libraries I used while developing and publishing this project.",
     LANGUAGE: "Türkçe",
     LIVE_PROJECT: "Live Project",
-    DARK_THEME: 'Dark Theme'
+    DARK_THEME: 'Dark Theme',
+    BOOKMARKS: 'Bookmarks'
   },
 };
 
