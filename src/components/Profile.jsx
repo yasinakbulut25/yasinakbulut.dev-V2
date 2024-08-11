@@ -1,4 +1,5 @@
 import { Switch, User } from "@nextui-org/react";
+import { func } from "prop-types";
 import ProfileImage from "../assets/profile.png";
 import { Link, Button, Divider } from "@nextui-org/react";
 import {
@@ -216,5 +217,9 @@ function Profile({ closeMenu }) {
     </div>
   );
 }
+
+Profile.propTypes = {
+  closeMenu: func,
+};
 
 export default Profile;

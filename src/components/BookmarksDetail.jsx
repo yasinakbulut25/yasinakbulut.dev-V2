@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Spinner } from "@nextui-org/react";
 import { bookmarks } from "../content/bookmarks";
 import BookmarkItem from "./BookmarkItem";
+import axios from "axios";
 
 function BookmarksDetail() {
   const { url } = useParams();
@@ -10,23 +11,62 @@ function BookmarksDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const findBookmarks = bookmarks.find((b) => b.url === url);
-    if (findBookmarks) {
-      setBookmarkList(() => findBookmarks);
+    setLoading(true);
+    setBookmarkList([]);
+
+    const cacheValue = `yasinv2-${url}-bm`;
+    const cachedData = localStorage.getItem(cacheValue);
+    const cacheDuration = 24 * 60 * 60 * 1000; // 24 hours
+
+    const fetchAndCacheData = async () => {
+      const findBookmarks = bookmarks.find((b) => b.url === url);
+
+      if (findBookmarks) {
+        let metaDatas = [];
+
+        for (let item of findBookmarks.contents) {
+          try {
+            const response = await axios.get(
+              `https://api.dub.co/metatags?url=${item}`
+            );
+            const newData = {
+              url: item,
+              ...response.data,
+            };
+            metaDatas = [...metaDatas, newData];
+            setBookmarkList(metaDatas);
+          } catch (err) {
+            console.error("An error occurred while retrieving metadata!");
+          }
+        }
+
+        const dataToStore = {
+          metadata: metaDatas,
+          timestamp: new Date().getTime(),
+        };
+
+        localStorage.setItem(cacheValue, JSON.stringify(dataToStore));
+        setLoading(false);
+      }
+    };
+
+    if (cachedData) {
+      const parsedData = JSON.parse(cachedData);
+      const now = new Date();
+
+      if (now.getTime() - parsedData.timestamp < cacheDuration) {
+        setBookmarkList(parsedData.metadata);
+        setLoading(false);
+      } else {
+        fetchAndCacheData();
+      }
+    } else {
+      fetchAndCacheData();
     }
-    setLoading(false);
   }, [url]);
 
-  if (loading) {
-    return <Spinner className="w-full h-20" color="default" />;
-  }
-
-  const firstColumn = bookmarkList.contents.filter(
-    (_, index) => index % 2 === 0
-  );
-  const secondColumn = bookmarkList.contents.filter(
-    (_, index) => index % 2 === 1
-  );
+  const firstColumn = bookmarkList.filter((_, index) => index % 2 === 0);
+  const secondColumn = bookmarkList.filter((_, index) => index % 2 === 1);
 
   return (
     <div className="flex flex-col gap-4 lg:border-transparent pb-8 lg:pt-0 pt-8">
@@ -45,6 +85,7 @@ function BookmarksDetail() {
           ))}
         </div>
       </div>
+      {loading && <Spinner className="w-full h-20" color="default" />}
     </div>
   );
 }
