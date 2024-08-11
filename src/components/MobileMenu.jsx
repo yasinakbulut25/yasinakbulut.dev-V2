@@ -59,11 +59,11 @@ function MobileMenu() {
         size="lg"
         placement="bottom"
         onOpenChange={onOpenChange}
-        className="absolute sm:my-0 rounded-bl-none rounded-br-none dark:bg-slate-900"
+        className="absolute sm:my-0 rounded-bl-none rounded-br-none dark:bg-gray-900"
       >
-        <ModalContent className="my-0">
-          <div className="absolute-top-0 w-28 h-2 bg-gray-200 dark:bg-slate-800 rounded-full mx-auto mt-2"></div>
-          <div className="p-6">
+        <ModalContent className="my-0 max-h-[640px] overflow-y-auto">
+          <div className="p-6 pt-0">
+            <div className="w-28 h-2 bg-gray-200 dark:bg-gray-800 rounded-full mx-auto mt-2 mb-4"></div>
             <Profile closeMenu={onClose} />
           </div>
         </ModalContent>
