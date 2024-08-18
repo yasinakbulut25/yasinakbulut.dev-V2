@@ -17,7 +17,7 @@ function BookmarkItem({ item }) {
         alt={item.description}
         isZoomed
         fallbackSrc={FallbackImage}
-        className="aspect-[1200/630] object-cover"
+        className="aspect-[1200/630] object-contain w-full"
       />
       <div className="flex flex-col gap-1">
         <h2 className="text-md font-bold text-gray-60 dark:text-slate-300">
