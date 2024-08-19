@@ -13,6 +13,7 @@ import {
   Home,
   Languages,
   Bookmark,
+  PencilLine,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../context/BlogContext";
@@ -65,20 +66,6 @@ function Profile({ closeMenu }) {
             <Home width={16} /> {TEXTS.HOME}
           </span>
         </Button>
-        {/*         <Button
-          to={`/${language}/blogs`}
-          as={NavLink}
-          onClick={() => setSubMenuOpen(true)}
-          onPress={closeMenu}
-          isExternal
-          variant="light"
-          radius="sm"
-          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
-        >
-          <span className="flex items-center gap-2 ">
-            <PencilLine width={16} /> {TEXTS.BLOGS}
-          </span>
-        </Button> */}
         <Button
           to={`/${language}/projects`}
           as={NavLink}
@@ -118,6 +105,20 @@ function Profile({ closeMenu }) {
         >
           <span className="flex items-center gap-2 ">
             <Award width={16} /> {TEXTS.EXPERIENCES}
+          </span>
+        </Button>
+        <Button
+          to={`/${language}/blogs`}
+          as={NavLink}
+          onClick={() => setSubMenuOpen(true)}
+          onPress={closeMenu}
+          isExternal
+          variant="light"
+          radius="sm"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+        >
+          <span className="flex items-center gap-2 ">
+            <PencilLine width={16} /> {TEXTS.BLOGS}
           </span>
         </Button>
         <Button

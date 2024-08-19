@@ -25,7 +25,7 @@ function App() {
       {firstSegment && firstSegment !== "experiences" && (
         <SubMenu firstSegment={firstSegment} />
       )}
-      <div className="flex flex-1">
+      <div className="grid w-full">
         <div className="bg-image" />
         <div className="gradient-bg" />
         <div className="scrollable-area relative flex w-full flex-col dark:bg-gray-900 p-8 lg:z-10 z-9">

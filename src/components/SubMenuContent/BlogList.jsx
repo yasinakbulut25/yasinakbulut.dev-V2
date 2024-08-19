@@ -6,10 +6,10 @@ function BlogList() {
   const { setSubMenuOpen, language } = useBlogContext();
   return (
     <div className="navLinks flex flex-col gap-1 text-sm">
-      {blogComponents.map((blog) => {
+      {blogComponents.map((blog, index) => {
         return (
           <NavLink
-            key={blog.id}
+            key={index}
             onClick={() => setSubMenuOpen(false)}
             className="flex flex-col gap-1 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-slate-800 rounded-lg p-3"
             to={`/${language}/blogs/${blog.url}`}
