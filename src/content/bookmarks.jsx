@@ -6,10 +6,11 @@ export const bookmarks = [
     contents: [
       "https://nextui.org/",
       "https://ui.shadcn.com/",
-      "https://mui.com/",
+      "https://tremor.so/",
       "https://www.radix-ui.com/",
       "https://v2.chakra-ui.com/",
       "https://primereact.org/",
+      "https://mui.com/",
       "https://preline.co/",
       "https://ant.design/",
     ],
@@ -29,6 +30,7 @@ export const bookmarks = [
       "https://feathericons.com/",
       "https://mui.com/material-ui/material-icons/",
       "https://boxicons.com/",
+      "https://remixicon.com/",
     ],
   },
   /* {
