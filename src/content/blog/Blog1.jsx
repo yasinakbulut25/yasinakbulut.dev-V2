@@ -19,7 +19,7 @@ function Blog1() {
     on:
       push:
         branches:
-          - main # 'main' dalına yapılan her push ile çalışacak
+          - main # veya ana branch neyse onu yazın
     
     jobs:
       deploy:
@@ -47,19 +47,25 @@ function Blog1() {
   const code2 = {
     code: `
     name: Deploy to cPanel
-  
+
     on:
       push:
         branches:
-          - main # 'main' dalına yapılan her push ile çalışacak
+          - main # veya ana branch neyse onu yazın
     
     jobs:
-      deploy:
+      build:
         runs-on: ubuntu-latest
     
         steps:
         - name: Checkout code
           uses: actions/checkout@v2
+    
+        - name: Install dependencies
+          run: npm install
+    
+        - name: Build project
+          run: npm run build  # React projenizin build komutunu çalıştırın
     
         - name: Deploy via FTP
           uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -69,15 +75,15 @@ function Blog1() {
             password: \${{ secrets.FTP_PASSWORD }}  # GitHub Secrets de belirtilen FTP Password adı ile aynı olmalıdır
             protocol: ftps  # FTP sunucunuzun desteklediği protokolü seçin
             port: 21  # FTP & açık FTPS portu, gerekirse bu değeri hosting sağlayıcınızın belirttiği doğru port numarasına göre güncelleyin
-            local-dir: ./  # Gönderilecek dosyaların bulunduğu yer
-            server-dir: ./  # FTP hesabının bağlandığı dizin, bunu kendi cPanel dizininize göre güncelleyebilirsiniz (sonunda / ile bitmeli)
+            local-dir: dist/  # React projenizin build çıktısının olduğu dizin (sonunda / ile bitmeli)
+            server-dir: ./  # Projenizi yükleyeceğiniz dizin, bunu kendi cPanel dizininize göre güncelleyin (sonunda / ile bitmeli)
     `,
     language: "yml",
-    highlightedLines: [""],
+    highlightedLines: ["16:17", "19:20"],
   };
 
   return (
-    <article className="content-html flex flex-col gap-4 lg:border-transparent border-b border-slate-200 pb-8 lg:pt-0 pt-8">
+    <article className="content-html flex flex-col gap-4 pb-8 lg:pt-0 pt-8">
       <div className="flex gap-2 text-gray-500 dark:text-slate-400 font-light">
         <CalendarDays width={18} /> 19 Ağustos 2024
       </div>
@@ -97,6 +103,19 @@ function Blog1() {
         oluşturmanız gerekiyor. Eğer zaten bir GitHub depo mevcutsa bu adımı
         atlayabilirsiniz.
       </Text>
+
+      <ol className={textColorClass}>
+        <li>GitHub hesabınıza giriş yapın.</li>
+        <li>
+          Sağ üst köşedeki <strong>"+"</strong> simgesine tıklayın ve{" "}
+          <strong>New repository</strong> seçeneğine tıklayın.
+        </li>
+        <li>Depo adı, açıklama ve gizlilik ayarlarını yapın.</li>
+        <li>
+          <strong>Create repository</strong> butonuna tıklayarak depoyu
+          oluşturun.
+        </li>
+      </ol>
 
       <SubTitle>2. cPanel de FTP Hesabı Oluşturma</SubTitle>
 
@@ -119,7 +138,7 @@ function Blog1() {
         </li>
         <li>
           FTP hesabınızı oluşturun ve <strong>FTP Hesapları</strong> listesinde
-          oluşturduğunuz ftp hesabı için
+          oluşturduğunuz ftp hesabı için{" "}
           <strong>FTP İstemcisini Yapılandır</strong> seçin.
         </li>
         <li>
@@ -198,16 +217,15 @@ function Blog1() {
         highlightedLines={code1.highlightedLines}
       />
 
-      <SubTitle>3.1. Build Alınıp Deploy Etme</SubTitle>
+      <SubTitle>4.1. Build Alınıp Deploy Etme</SubTitle>
 
       <Text>
         Eğer oluşturduğunuz projenin build alındıktan sonra cPanel'e
         gönderilmesi gerekiyorsa <code>deploy.yml</code> dosyasında bunu
         belirtebilirsiniz. Örneğin projenizi React ile geliştirdiyseniz ve
-        projenizi cPanele deploy etmek istiyorsanız ilk başta projenizin build
-        alınması ve daha sonra deploy edilmesi gerekmektedir. Bu işlem için{" "}
-        <code>deploy.yml</code>
-        dosyanızı aşağıdaki gibi ayarlayabilirsiniz.
+        projenizi cPanele deploy etmek istiyorsanız projenizin deploy sırasında
+        build alınması gerekmektedir. Bu işlem için <code>deploy.yml</code>{" "}
+        dosyanızı aşağıdaki gibi güncelleyebilirsiniz.
       </Text>
 
       <CodeBlockUI
@@ -216,7 +234,7 @@ function Blog1() {
         highlightedLines={code2.highlightedLines}
       />
 
-      <SubTitle>4. Workflow'u Test Etme</SubTitle>
+      <SubTitle>5. Workflow'u Test Etme</SubTitle>
 
       <Text>
         Artık her yeni commit ve push işlemi yaptığınızda, GitHub Actions

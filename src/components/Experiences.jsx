@@ -35,7 +35,7 @@ function Experiences() {
                   <span className="md:hidden inline-flex ml-1">{`| ${experince.startDate} - ${experince.endDate}`}</span>
                 </span>
                 <div
-                  className="content-html mb-4 text-base font-normal text-gray-60 dark:text-slate-500"
+                  className="content-html mb-4 text-base font-normal text-gray-60 dark:text-slate-400"
                   dangerouslySetInnerHTML={{ __html: experince.exp }}
                 ></div>
               </li>
