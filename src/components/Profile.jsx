@@ -107,7 +107,7 @@ function Profile({ closeMenu }) {
             <Award width={16} /> {TEXTS.EXPERIENCES}
           </span>
         </Button>
-        {/* <Button
+        <Button
           to={`/${language}/blogs`}
           as={NavLink}
           onClick={() => setSubMenuOpen(true)}
@@ -120,7 +120,7 @@ function Profile({ closeMenu }) {
           <span className="flex items-center gap-2 ">
             <PencilLine width={16} /> {TEXTS.BLOGS}
           </span>
-        </Button> */}
+        </Button>
         <Button
           to={`/${language}/bookmarks`}
           as={NavLink}

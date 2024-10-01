@@ -85,7 +85,7 @@ function Blog1() {
   return (
     <article className="content-html flex flex-col gap-4 pb-8 lg:pt-0 pt-8">
       <div className="flex gap-2 text-gray-500 dark:text-slate-400 font-light">
-        <CalendarDays width={18} /> 19 Ağustos 2024
+        <CalendarDays width={18} /> 01 Ekim 2024
       </div>
       <Title>GitHub Actions Kullanarak Site Yayınlamak (cPanel)</Title>
       <Text>

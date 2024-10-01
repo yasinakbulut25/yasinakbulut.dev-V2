@@ -36,7 +36,7 @@ function CodeBlockUI({ code, language, highlightedLines, title }) {
                 className={`table-cell pl-6 pr-4 text-sm text-right select-none ${
                   isLineHighlighted
                     ? "text-gray-500 dark:text-gray-400"
-                    : "text-gray-300 text-gray-600"
+                    : "text-gray-300 dark:text-gray-600"
                 }`}
               />
               <CodeBlock.LineContent className="table-cell w-full pr-6">
