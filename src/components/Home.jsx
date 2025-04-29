@@ -58,9 +58,9 @@ function Home() {
             {about.download}
           </Button>
 
-          <span className="block text-sm font-normal text-gray-500 dark:text-slate-400 mt-6">
+       {/*    <span className="block text-sm font-normal text-gray-500 dark:text-slate-400 mt-6">
             {TEXTS.CV_TEXT}
-          </span>
+          </span> */}
 
           <div className="flex gap-4 flex-col my-8">
             <h2 className="text-2xl font-bold leading-tight text-gray-900 dark:text-slate-400 lg:text-3xl">

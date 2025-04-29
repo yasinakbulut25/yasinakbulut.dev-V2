@@ -34,14 +34,14 @@ function Profile({ closeMenu }) {
         name="Yasin Akbulut"
         description={
           <span className="flex gap-1 text-xs dark:text-slate-500">
-            Jr. UI Developer
-            <Link
+            Frontend / UI Developer
+            {/* <Link
               href="https://jotform.com"
               className="text-xs text-slate-400 dark:text-slate-500"
               isExternal
             >
               @Jotform
-            </Link>
+            </Link> */}
           </span>
         }
         avatarProps={{
@@ -121,7 +121,7 @@ function Profile({ closeMenu }) {
             <PencilLine width={16} /> {TEXTS.BLOGS}
           </span>
         </Button>
-        <Button
+       {/*  <Button
           to={`/${language}/bookmarks`}
           as={NavLink}
           onClick={() => setSubMenuOpen(true)}
@@ -134,7 +134,7 @@ function Profile({ closeMenu }) {
           <span className="flex items-center gap-2">
             <Bookmark width={16} /> {TEXTS.BOOKMARKS}
           </span>
-        </Button>
+        </Button> */}
         <Button
           onClick={handleLanguageClick}
           isExternal
