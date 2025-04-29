@@ -1,15 +1,33 @@
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../../context/BlogContext";
 import { Chip, Image, Spinner } from "@nextui-org/react";
-import { codingStringToArray, codingValues } from "../../utils";
+import { codingStringToArray, codingValues, getLanguage } from "../../utils";
+import { selectProjects, selectProjectsError, selectProjectsLoading } from "../../fetures/projects/projectSelectors";
+import { useSelector } from "react-redux";
+import Loading from "../ui/Loading";
+import Alert from "../ui/Alert";
 
 function Projects() {
-  const { projects, filePathUrl, setSubMenuOpen, language } = useBlogContext();
+  const { filePathUrl, setSubMenuOpen, language } = useBlogContext();
+  const projects = useSelector(selectProjects);
+  const isLoading = useSelector(selectProjectsLoading);
+  const error = useSelector(selectProjectsError);
+
+  const currentLanguage = getLanguage(language);
+  const languageData = projects?.filter(item => item.lang === currentLanguage);
+
+  if(isLoading) {
+    return <Loading />
+  }
+
+  if(error) {
+    return <Alert />
+  }
 
   return (
     <div className="navLinks flex lg:flex-col flex-wrap gap-4 text-sm justify-center">
-      {projects.length > 0 ? (
-        projects.map((project) => {
+      {languageData.length > 0 ? (
+        languageData.reverse().map((project) => {
           const codings = codingStringToArray(project.coding);
           return (
             <NavLink

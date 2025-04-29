@@ -4,9 +4,13 @@ import { useBlogContext } from "../context/BlogContext";
 import { Button, Chip, Image, Link, Spinner } from "@nextui-org/react";
 import { codingStringToArray, codingValues } from "../utils";
 import { Eye, Github } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectWorks } from "../fetures/works/workSelectors";
 
 function WorkDetail() {
-  const { works, filePathUrl, TEXTS } = useBlogContext();
+  const { filePathUrl, TEXTS } = useBlogContext();
+  const works = useSelector(selectWorks);
+
   const { url } = useParams();
   const [content, setContent] = useState(null);
   const [codings, setCodings] = useState([]);

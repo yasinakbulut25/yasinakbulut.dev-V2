@@ -4,12 +4,15 @@ import { useBlogContext } from "../context/BlogContext";
 import { Button, Chip, Image, Link, Spinner } from "@nextui-org/react";
 import { codingStringToArray, codingValues } from "../utils";
 import { Eye } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectProjects } from "../fetures/projects/projectSelectors";
 
 function WorkDetail() {
-  const { projects, filePathUrl, TEXTS } = useBlogContext();
+  const { filePathUrl, TEXTS } = useBlogContext();
   const { url } = useParams();
   const [content, setContent] = useState(null);
   const [codings, setCodings] = useState([]);
+  const projects = useSelector(selectProjects);
 
   useEffect(() => {
     const findContent = projects.find((b) => b.id === url);

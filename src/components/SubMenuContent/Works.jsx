@@ -1,15 +1,32 @@
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../../context/BlogContext";
 import { Chip, Image, Spinner } from "@nextui-org/react";
-import { codingStringToArray, codingValues } from "../../utils";
+import { codingStringToArray, codingValues, getLanguage } from "../../utils";
+import { selectWorks, selectWorksError, selectWorksLoading } from "../../fetures/works/workSelectors";
+import { useSelector } from "react-redux";
+import Loading from "../ui/Loading";
+import Alert from "../ui/Alert";
 
 function Works() {
-  const { works, filePathUrl, setSubMenuOpen, language } = useBlogContext();
+  const { filePathUrl, setSubMenuOpen, language } = useBlogContext();
+  const works = useSelector(selectWorks);
+  const isLoading = useSelector(selectWorksLoading);
+  const error = useSelector(selectWorksError);
 
+  const currentLanguage = getLanguage(language);
+  const languageData = works?.filter(work => work.lang === currentLanguage);
+
+  if(isLoading) {
+    return <Loading />
+  }
+
+  if(error) {
+    return <Alert />
+  }
   return (
     <div className="navLinks flex lg:flex-col flex-wrap gap-4 text-sm justify-center">
-      {works.length > 0 ? (
-        works.map((work) => {
+      {languageData.length > 0 ? (
+        languageData.reverse().map((work) => {
           const codings = codingStringToArray(work.coding);
           return (
             <NavLink

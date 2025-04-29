@@ -12,9 +12,28 @@ import Php from "../assets/php.svg";
 import GitHub from "../assets/github.svg";
 import Cpanel from "../assets/cpanel.svg";
 import MySql from "../assets/mysql.svg";
+import { useSelector } from "react-redux";
+import Loading from "./ui/Loading";
+import Alert from "./ui/Alert";
+import { getLanguage } from "../utils";
+import { selectAbout, selectAboutError, selectAboutLoading } from "../fetures/about/aboutSelectors";
 
 function Home() {
-  const { about, TEXTS } = useBlogContext();
+  const { TEXTS, language } = useBlogContext();
+  const data = useSelector(selectAbout);
+  const isLoading = useSelector(selectAboutLoading);
+  const error = useSelector(selectAboutError);
+
+  const currentLanguage = getLanguage(language);
+  const about = data?.find?.(item => item.lang === currentLanguage);
+
+  if(isLoading) {
+    return <Loading />
+  }
+
+  if(error) {
+    return <Alert />
+  }
 
   return (
     <>

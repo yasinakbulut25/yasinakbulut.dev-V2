@@ -21,3 +21,11 @@ export const codingValues = [
   "API",
   "Tailwind",
 ];
+
+export const getLanguage = (value) => {
+  if(value === "tr") {
+    return "0";
+  } else {
+    return "1";
+  }
+}

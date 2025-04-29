@@ -11,12 +11,26 @@ import WorkDetail from "./components/WorkDetail";
 import Experiences from "./components/Experiences";
 import { useBlogContext } from "./context/BlogContext";
 import BookmarksDetail from "./components/BookmarksDetail";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchProjectsRequest } from "./fetures/projects/projectSlice";
+import { fetchWorksRequest } from "./fetures/works/workSlice";
+import { fetchExperiencesRequest } from "./fetures/experiences/experienceSlice";
+import { fetchAboutRequest } from "./fetures/about/aboutSlice";
 
 function App() {
-  const { language } = useBlogContext();
+  const dispatch = useDispatch();
 
+  const { language } = useBlogContext();
   const location = useLocation();
   const firstSegment = findParam(location.pathname, 1);
+
+  useEffect(() => {
+    dispatch(fetchAboutRequest());
+    dispatch(fetchProjectsRequest());
+    dispatch(fetchWorksRequest());
+    dispatch(fetchExperiencesRequest());
+  }, [dispatch]);
 
   return (
     <main className="relative lg:flex block flex-1">

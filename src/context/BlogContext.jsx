@@ -8,7 +8,7 @@ const BlogContext = createContext();
 
 export const Provider = ({ children }) => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  const filePathUrl = import.meta.env.VITE_FILE_PATH_URL;
+  const filePathUrl = "https://yasinakbulut.dev/";
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,18 +30,6 @@ export const Provider = ({ children }) => {
   const [theme, setTheme] = useState(
     localStorage.getItem(localStorageParam) || "light"
   );
-
-  const [about, setAbout] = useState();
-  const [projects, setProjects] = useState([]);
-  const [works, setWorks] = useState([]);
-  const [experiences, setExperiences] = useState([]);
-
-  useEffect(() => {
-    getAbout();
-    getProjects();
-    getWorks();
-    getExperiences();
-  }, [lang]);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem(localStorageParam);
@@ -73,40 +61,8 @@ export const Provider = ({ children }) => {
     }
   }, [navigate]);
 
-  const getAbout = async () => {
-    await axios.get(backendUrl + "getAbout/" + lang).then(function (response) {
-      setAbout(response.data);
-    });
-  };
-
-  const getProjects = async () => {
-    await axios
-      .get(backendUrl + "getProjects/" + lang)
-      .then(function (response) {
-        setProjects(response.data);
-      });
-  };
-
-  const getWorks = async () => {
-    await axios.get(backendUrl + "getWorks/" + lang).then(function (response) {
-      setWorks(response.data);
-    });
-  };
-
-  const getExperiences = async () => {
-    await axios
-      .get(backendUrl + "getExperiences/" + lang)
-      .then(function (response) {
-        setExperiences(response.data);
-      });
-  };
-
   const sharedValuesAndMethods = {
     filePathUrl,
-    projects,
-    works,
-    experiences,
-    about,
     subMenuOpen,
     language,
     setLang,
