@@ -89,7 +89,7 @@ function Skills() {
           {skillData.map((skill, index) => {
             return (
               <div key={index} className="flex items-baseline gap-[6px]">
-                <h3 className="text-md font-semibold min-w-max">
+                <h3 className="text-md font-semibold min-w-max dark:text-slate-300">
                   {skill.title["en"]}:{" "}
                 </h3>
                 <div className="flex items-center gap-[8px] flex-wrap">
@@ -97,7 +97,7 @@ function Skills() {
                     return (
                       <span
                         key={index}
-                        className="flex min-w-max text-[13px] py-1 px-2 bg-gray-200 text--600 rounded w-max"
+                        className="flex min-w-max text-[13px] py-1 px-2 bg-gray-200 dark:text-slate-300 dark:bg-gray-800 text--600 rounded w-max"
                       >
                         {s}
                       </span>
