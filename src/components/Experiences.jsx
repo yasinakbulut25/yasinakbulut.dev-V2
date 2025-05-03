@@ -1,10 +1,15 @@
 import { Avatar, Spinner } from "@nextui-org/react";
 import { useBlogContext } from "../context/BlogContext";
-import { selectExperiences, selectExperiencesError, selectExperiencesLoading } from "../fetures/experiences/experienceSelectors";
+import {
+  selectExperiences,
+  selectExperiencesError,
+  selectExperiencesLoading,
+} from "../fetures/experiences/experienceSelectors";
 import { useSelector } from "react-redux";
 import Loading from "./ui/Loading";
 import Alert from "./ui/Alert";
 import { getLanguage } from "../utils";
+import { Award } from "lucide-react";
 
 function Experiences() {
   const { filePathUrl, TEXTS, language } = useBlogContext();
@@ -13,21 +18,23 @@ function Experiences() {
   const error = useSelector(selectExperiencesError);
 
   const currentLanguage = getLanguage(language);
-  const languageData = experiences?.filter(item => item.lang === currentLanguage);
+  const languageData = experiences?.filter(
+    (item) => item.lang === currentLanguage
+  );
 
-  if(isLoading) {
-    return <Loading />
+  if (isLoading) {
+    return <Loading />;
   }
 
-  if(error) {
-    return <Alert />
+  if (error) {
+    return <Alert />;
   }
   return (
     <>
       {languageData.length > 0 ? (
         <div className="max-w-xl mx-auto py-8 lg:px-0 px-4">
-          <h1 className="p-0 text-3xl font-bold leading-tight text-gray-900 dark:text-slate-300 lg:text-4xl mb-8">
-            {TEXTS.MY_EXPERIENCES}
+          <h1 className="flex items-center gap-3 p-0 text-3xl font-bold leading-tight text-gray-900 dark:text-slate-300 lg:text-4xl mb-8">
+            <Award color="#4f46e5" width={28} height={28} /> {TEXTS.MY_EXPERIENCES}
           </h1>
           <ol className="relative border-l border-gray-200 dark:border-slate-700">
             {languageData.reverse().map((experince) => (

@@ -57,7 +57,7 @@ export const Provider = ({ children }) => {
   useEffect(() => {
     const currentPath = window.location.pathname;
     if (!currentPath.startsWith("/tr") && !currentPath.startsWith("/en")) {
-      navigate("/tr", { replace: true });
+      navigate("/en", { replace: true });
     }
   }, [navigate]);
 

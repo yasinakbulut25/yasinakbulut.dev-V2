@@ -9,6 +9,7 @@ import { findParam } from "./utils/index";
 import ProjectDetail from "./components/ProjectDetail";
 import WorkDetail from "./components/WorkDetail";
 import Experiences from "./components/Experiences";
+import Skills from "./components/Skills";
 import { useBlogContext } from "./context/BlogContext";
 import BookmarksDetail from "./components/BookmarksDetail";
 import { useDispatch } from "react-redux";
@@ -36,7 +37,7 @@ function App() {
     <main className="relative lg:flex block flex-1">
       <MobileMenu />
       <LeftMenu />
-      {firstSegment && firstSegment !== "experiences" && (
+      {firstSegment && firstSegment !== "experiences" && firstSegment !== "skills" && (
         <SubMenu firstSegment={firstSegment} />
       )}
       <div className="grid w-full">
@@ -59,6 +60,10 @@ function App() {
             <Route
               path={`/${language}/experiences`}
               element={<Experiences />}
+            />
+             <Route
+              path={`/${language}/skills`}
+              element={<Skills />}
             />
           </Routes>
         </div>

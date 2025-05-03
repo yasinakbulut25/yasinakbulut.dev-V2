@@ -14,6 +14,7 @@ import {
   Languages,
   Bookmark,
   PencilLine,
+  Rocket,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useBlogContext } from "../context/BlogContext";
@@ -105,6 +106,19 @@ function Profile({ closeMenu }) {
         >
           <span className="flex items-center gap-2 ">
             <Award width={16} /> {TEXTS.EXPERIENCES}
+          </span>
+        </Button>
+        <Button
+          to={`/${language}/skills`}
+          as={NavLink}
+          onClick={closeMenu}
+          isExternal
+          variant="light"
+          radius="sm"
+          className="w-full justify-between data-[hover=true]:bg-gray-200 dark:data-[hover=true]:bg-slate-800 hover:opacity-100 text-sx px-2 h-8"
+        >
+          <span className="flex items-center gap-2 ">
+            <Rocket width={16} /> {TEXTS.SKILLS}
           </span>
         </Button>
         <Button
