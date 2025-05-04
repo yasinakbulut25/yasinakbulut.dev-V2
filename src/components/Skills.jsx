@@ -88,7 +88,7 @@ function Skills() {
         <div className="flex flex-col gap-8">
           {skillData.map((skill, index) => {
             return (
-              <div key={index} className="flex items-baseline gap-[6px]">
+              <div key={index} className="flex sm:flex-row flex-col items-baseline gap-[6px]">
                 <h3 className="text-md font-semibold min-w-max dark:text-slate-300">
                   {skill.title["en"]}:{" "}
                 </h3>
