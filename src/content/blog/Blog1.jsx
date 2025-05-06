@@ -1,6 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import CodeBlockUI from "../../components/ui/CodeBlockUI";
 import ImageUI from "../../components/ui/ImageUI";
-import { CalendarDays } from "lucide-react";
 import Title from "../../components/ui/Title";
 import SubTitle from "../../components/ui/SubTitle";
 import Text from "../../components/ui/Text";
@@ -8,9 +8,11 @@ import CreateFtpAccountImg from "../../assets/blogs/create-ftp-account.png";
 import CreateFtpAccountImg2 from "../../assets/blogs/create-ftp-account-2.png";
 import GithubActionsKeys from "../../assets/blogs/github-actions-keys.png";
 import GithubActionsStatus from "../../assets/blogs/github-actions-status.png";
+import { blogComponents } from "./blogs";
 
 function Blog1() {
   const textColorClass = "text-gray-900 dark:text-slate-400";
+  const blog = blogComponents[1];
 
   const code1 = {
     code: `
@@ -84,10 +86,19 @@ function Blog1() {
 
   return (
     <article className="content-html flex flex-col gap-4 pb-8 lg:pt-0 pt-8">
-      <div className="flex gap-2 text-gray-500 dark:text-slate-400 font-light">
-        <CalendarDays width={18} /> 01 Ekim 2024
-      </div>
       <Title>GitHub Actions Kullanarak Site Yayınlamak (cPanel)</Title>
+      <div className="flex flex-wrap gap-1 transition-colors duration-300 text-slate-500 dark:text-slate-400">
+        {blog.categories.map((c, i) => {
+          return (
+            <span
+              className="text-[10px] px-[4px] py-[2px] bg-slate-300/40 dark:bg-slate-600/40 rounded"
+              key={i}
+            >
+              {c}
+            </span>
+          );
+        })}
+      </div>
       <Text>
         Web sitenizi sürekli olarak güncel tutmak, özellikle düzenli olarak
         değişiklik yaptığınız bir projede önemli bir konudur. cPanel kullanan

@@ -15,9 +15,11 @@ function BlogList() {
             to={`/${language}/blogs/${blog.url}`}
           >
             <span className="font-semibold dark:text-slate-300">{blog.title}</span>
-            <time className="transition-colors duration-300 text-slate-500 dark:text-slate-500">
-              {blog.date}
-            </time>
+            <div className="flex flex-wrap gap-1 transition-colors duration-300 text-slate-500 dark:text-slate-400 mt-1">
+              {blog.categories.map((c, i) => {
+                return <span className="text-[10px] px-[4px] py-[2px] bg-slate-300/40 dark:bg-slate-600/40 rounded" key={i}>{c}</span>;
+              })}
+            </div>
           </NavLink>
         );
       })}
