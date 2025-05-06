@@ -12,7 +12,7 @@ import { blogComponents } from "./blogs";
 
 function Blog1() {
   const textColorClass = "text-gray-900 dark:text-slate-400";
-  const blog = blogComponents[1];
+  const blog = blogComponents[0];
 
   const code1 = {
     code: `
