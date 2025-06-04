@@ -55,6 +55,7 @@ function BlogList() {
                     <NavLink
                       className="subDataLink text-[14px] px-[4px] py-[6px] text-slate-500 rounded"
                       key={i}
+                      onClick={() => setSubMenuOpen(false)}
                       to={`/${language}/blogs/${data.url}`}
                     >
                       ➔ {data.title}
