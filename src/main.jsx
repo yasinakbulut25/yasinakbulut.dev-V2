@@ -8,13 +8,12 @@ import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-  <Provider store={store}>
-    <BlogProvider>
-      <NextUIProvider>
-        <App />
-      </NextUIProvider>
-    </BlogProvider>
-  </Provider>
-    
+    <Provider store={store}>
+      <BlogProvider>
+        <NextUIProvider>
+          <App />
+        </NextUIProvider>
+      </BlogProvider>
+    </Provider>
   </BrowserRouter>
 );

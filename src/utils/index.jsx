@@ -1,3 +1,5 @@
+import he from 'he';
+
 export const findParam = (pathname, index) => {
   const pathSegments = pathname.split("/").filter(Boolean);
   const segment = pathSegments[index];
@@ -23,9 +25,16 @@ export const codingValues = [
 ];
 
 export const getLanguage = (value) => {
-  if(value === "tr") {
+  if (value === "tr") {
     return "0";
   } else {
     return "1";
   }
-}
+};
+
+export const getSeoDescription = (text, limit = 150) => {
+  const decodedDescription  = he.decode(text);
+  const match = decodedDescription.match(/[^.!?]+[.!?]/);
+  const sentence = match ? match[0] + match[1] : decodedDescription;
+  return sentence.length > limit ? sentence.slice(0, limit) + "..." : sentence;
+};
