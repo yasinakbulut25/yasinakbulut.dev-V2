@@ -35,7 +35,7 @@ function Profile({ closeMenu }) {
         name="Yasin Akbulut"
         description={
           <span className="flex gap-1 text-xs dark:text-slate-500">
-            Frontend / UI Developer
+            Frontend Developer
             {/* <Link
               href="https://jotform.com"
               className="text-xs text-slate-400 dark:text-slate-500"

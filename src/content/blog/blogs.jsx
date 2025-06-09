@@ -24,6 +24,7 @@ export const blogComponents = [
     url: "typescript-masterclass-adim-adim-ogren-projede-uygula",
     date: "4 Haziran, 2025",
     categories: ["typescript"],
+    lesson: "TYPESCRIPT",
     subData: [
       {
         title: "TypeScript'e Giriş: Temeller ve İlk Uygulama",
