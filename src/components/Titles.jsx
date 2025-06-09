@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Titles({ titles }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
   if (!titles || titles.length < 1) return;
 
   return (
@@ -26,10 +27,15 @@ function Titles({ titles }) {
             {titles.map((t) => {
               return (
                 <a
-                  className="hover:text-black dark:hover:text-white"
+                  className={`${
+                    activeId === t.id ? "text-black dark:text-white" : ""
+                  } hover:text-black dark:hover:text-white`}
                   key={t.id}
                   href={`#${t.id}`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setActiveId(t.id);
+                  }}
                 >
                   {t.innerText}
                 </a>
