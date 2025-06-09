@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,11 +21,14 @@ body.dark {
   min-height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 16px;
 }
 
 @media screen and (max-width: 1024px) {
   .scrollable-area {
     padding-top: 56px;
+    scroll-padding-top: 72px;
   }
 }
 
@@ -121,7 +124,11 @@ body.dark {
   width: 100%;
   max-width: 1100px;
   height: 100dvh;
-  background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%),
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
     radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
     radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
     radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
@@ -144,4 +151,3 @@ body.dark {
   z-index: 0;
   pointer-events: none;
 }
-

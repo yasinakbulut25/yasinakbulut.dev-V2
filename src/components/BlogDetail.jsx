@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner } from "@nextui-org/react";
 import { blogComponents } from "../content/blog/blogs";
+import slugify from "react-slugify";
+import Titles from "./Titles";
 
 function BlogDetail() {
   const { url } = useParams();
   const [Component, setComponent] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [titles, setTitles] = useState([]);
 
   const notFound = () => <div>Component not found</div>;
 
@@ -39,11 +42,29 @@ function BlogDetail() {
     setLoading(false);
   }, [url]);
 
+  useEffect(() => {
+    if (window) {
+      const tags = window.document.getElementsByTagName("h2");
+      const tagsArray = Array.from(tags);
+
+      tagsArray.map((tag) => {
+        tag.id = slugify(tag.innerText);
+      });
+
+      setTitles(tagsArray);
+    }
+  }, [loading, titles]);
+
   if (loading) {
     return <Spinner className="w-full h-20" color="default" />;
   }
 
-  return <Component />;
+  return (
+    <>
+      <Titles titles={titles} />
+      <Component />
+    </>
+  );
 }
 
 export default BlogDetail;
