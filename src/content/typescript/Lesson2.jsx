@@ -32,7 +32,7 @@ function Lesson2() {
       </Helmet>
       <article className="content-html flex flex-col gap-4 pb-8 lg:pt-0 pt-8">
         <Title>
-          TypeScript Temel Tipler: string, array, enum ve daha fazlası
+          Bölüm 2: TypeScript Temel Tipler: string, array, enum ve daha fazlası
         </Title>
 
         <SubTitle>2.1 Temel Tipler Nedir?</SubTitle>

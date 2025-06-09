@@ -1,5 +1,6 @@
 import Lesson1 from "../typescript/Lesson1";
 import Lesson2 from "../typescript/Lesson2";
+import Lesson3 from "../typescript/Lesson3";
 import Blog1 from "./Blog1";
 import Blog2 from "./Blog2";
 
@@ -37,6 +38,12 @@ export const blogComponents = [
         url: "typescript-temel-tipler-string-array-enum-ve-daha-fazlasi",
         date: "4 Haziran, 2025",
         component: Lesson2,
+      },
+      {
+        title: "Fonksiyonlarda TypeScript Kullanımı",
+        url: "fonksiyonlarda-typescript-kullanimi",
+        date: "9 Haziran, 2025",
+        component: Lesson3,
       },
     ],
     component: Blog2,
