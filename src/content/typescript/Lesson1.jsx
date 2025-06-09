@@ -9,7 +9,7 @@ import { blogComponents } from "../blog/blogs";
 function Lesson1() {
   const textColorClass = "text-gray-900 dark:text-slate-400";
   const lesson = blogComponents.find((b) => b.lesson === "TYPESCRIPT");
-  const blog = lesson.subData[1];
+  const blog = lesson.subData[0];
   const metaDescription =
     "TypeScript, JavaScript'te karşılaşılan bazı problemleri daha proje derlenmeden önce yakalayarak geliştiricinin daha güvenli kod yazmasına yardımcı olur";
 
